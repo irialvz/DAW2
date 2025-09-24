@@ -33,6 +33,9 @@ body, ul, li, p, a, label, input, div {
   font-family: 'Roboto', sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
+  /* list-style:none;
+  margin-left: 30px; */
+  
 }
 .h1 {
   font-family: 'Roboto', sans-serif;
@@ -61,6 +64,22 @@ body, ul, li, p, a, label, input, div {
 .btn-success {
   background-color: #ffad43 !important;
   border-color: #ff6d0b !important;
+}
+.btn-precio {
+  background-color: #ff4343 !important;
+  border-color: #ff0b0b !important;
+  
+}
+.btn-formu {
+  margin-left: 50px;
+  background-color: #ffad43 !important;
+  border-color: #ff6d0b !important;
+}
+.btn {
+  margin: 5px;
+}
+p.descripcionProd {
+  text-align: justify ;
 }
 .pagination .page-link:hover {color: #000;}
 .pagination .page-link:hover, .pagination .page-link.active {
