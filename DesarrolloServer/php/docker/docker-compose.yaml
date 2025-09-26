@@ -2,7 +2,7 @@ services:
   web:
     build: web
     ports:
-      - 8100:80
+      - 8109:80
     volumes:
       - ./../app:/var/www/html
     hostname: web

@@ -1,4 +1,7 @@
 FROM php:8.4-apache
 #este servicio tiene php y apache junto
+RUN echo "<Directory /var/www/html>" >> /etc/apache2/sites-enabled/000-default.conf
+RUN echo "Options +Indexes" >>        /etc/apache2/sites-enabled/000-default.conf
+RUN echo "</Directory>" >>              /etc/apache2/sites-enabled/000-default.conf
 EXPOSE 80
 #este contenedor se expondrá en el p80
