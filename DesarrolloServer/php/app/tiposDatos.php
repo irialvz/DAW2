@@ -30,6 +30,10 @@ echo "<hr>";
 echo "<br><h1>valor array </h1> <br>";
 $valorArray = [1,2,3];
 var_dump($valorArray);
+echo "<hr >";
+
+$valorArrayImpreso = print_r($valorArray, true);
+echo "La variable \$valorArray vale- \"$valorArrayImpreso\" - fin de visualizacion";
 
 echo "<hr>";
 echo "<br><h1>valor null </h1> <br>";

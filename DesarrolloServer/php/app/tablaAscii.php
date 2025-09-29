@@ -21,9 +21,10 @@
             echo "<tr>";
             echo "<td>$numero</td><td>$hexadecimal</td><td>$binario</td><td>$octal</td>";
             echo "</tr>";*/
-        echo "<tr>";
-        echo "<td>$numero</td><td>$caracter</td>";
-        echo "</tr>";
+        printf("<tr><td>%s</td><td>%s</td></tr>",  $numero , $caracter);
+/*        echo "\n<tr>";
+        echo "<td>$numero</td>\t\t<td>$caracter</td>";
+        echo "</tr>";*/
 
     }
 
