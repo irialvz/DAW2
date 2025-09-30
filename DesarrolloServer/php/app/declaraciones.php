@@ -17,6 +17,7 @@
 //    declarar constantes
     const  IVA = 0.16;
     echo "<h1>El valor del iva es ".IVA."</h1>";
+    echo "<h1></h1>";
     for ($numero = 0; $numero <= 50; $numero++){
 //        cambiar el prinf y formatear numero
         $num_binario = decbin($numero);
