@@ -1,3 +1,17 @@
 .carousel-item {
     height: 100%;
 }
+* {
+    font-family: 'Franklin Gothic Medium';
+    
+}
+h1 {
+    font-size: 30px;
+}
+p {
+    font-size: 20px;
+    text-align: justify;
+}
+img {
+    border-radius: 20px;
+}
