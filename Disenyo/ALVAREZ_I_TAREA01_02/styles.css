@@ -2,9 +2,7 @@
     height: 100%;
 }
 * {
-    font-family: 'Franklin Gothic Medium';
-    
-}
+font-family: "Playfair Display", Georgia, "Times New Roman", serif;}
 h1 {
     font-size: 30px;
 }
@@ -14,4 +12,12 @@ p {
 }
 img {
     border-radius: 20px;
+}
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: #4949491a;
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em #0000001a, inset 0 .125em .5em #00000026;
 }
