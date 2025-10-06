@@ -1,0 +1,15 @@
+* {
+  background-color: antiquewhite;
+  margin: 2%;
+}
+h1{
+  font-family: "Bebas Neue", sans-serif;
+}
+h2,h3,h4,h5,h6 {
+  color: gray;
+}
+div{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
