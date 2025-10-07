@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <section id="primerEjercicio">
+        <h1>Ejercicio 1</h1>
+        <p class="texto" id="parrafoPrincipal">primer parrafo de ejemplo para aplicar el color azul en la clase texto</p>
+        <p id="parrafoPrincipal">segundo parrafo de ejemplo para aplicar el color verde en el parrafo</p>
+        <p id="parrafo1">tercer parrafo de ejemplo para aplicar el color verde en el parrafo</p>
+    </section>
+    <hr>
+    <section id="segundoEjercicio">
+        <h1>Ejercicio2</h1>
+        <div>
+            <h1>titulo de div del segundo ejercicio</h1>
+            <p>parrado del segundo ejercicio <span>y aqui meto un span porque sí</span></p>
+            <!-- se han aplicado solamente el estilo en el h1 ya que el parrafo y el span (al estar dentro del <p>) aplica al estilo del primer ejer -->
+        </div>
+    </section>
+    <hr>
+    <section id="tercerEjercicio">
+        <h1>Ejercicio3</h1>
+        <div>
+            <h2>titulo h2de div del tercer ejercicio</h2>
+            <h1 class="titulo">titulo h1 de div del tercer ejerciciocon clase titulo</h1>
+            <h2 class="titulo">titulo h2 de div del tercer ejercicio coon clase titulo</h2>
+            <p>parrado del segundo ejercicio <span>y aqui meto un span porque sí</span></p>
+            <!-- se ha aplicado los estilos a cada uno correctamente,el important le da prioridad ante cualquier declaracion -->
+        </div>
+    </section>
+    <hr>
+    <section id="cuartoEjercicio">
+        <h1>Ejercicio4</h1>
+        <div>
+            <h1>titulo de div del segundo ejercicio</h1>
+            <p>parrado del segundo ejercicio <span>y aqui meto un span porque sí</span></p>
+            <!-- en mi caso esta heredando del <p> pero si lo comentamos en el css,se aplica el del div. Es interesante para forzar una propiedad que normalmente no se hereda -->
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+p {
+    color: blue;
+} 
+p.texto {
+    color: green;
+}
+#parrafo1 {
+    color:red;
+}
+div{
+    color:pink;
+    font-family: 'Courier New', Courier, monospace;
+    border: 5px solid black;
+    padding: 10px;
+}
+h2 {
+    color: rgb(19, 155, 234);
+}
+.titulo {
+    color: orange;
+}
+h2.titulo {
+    color: rgb(96, 138, 33);
+}
+#cuartoEjercicio div {
+    color: rgb(192, 147, 147);
+}
+span {
+    color: inherit;
+    font-weight: bold;
+}
