@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ventanaEmergente()">Pulsame</button>
+    <p id="mensaje"></p>
+    <script>
+        function ventanaEmergente(){
+            let ciudad = prompt("Cual es tu ciudad favorita?");
+            ciudad = ciudad.toLowerCase();
+            let mensaje;
+            switch (ciudad){
+                case "zaragoza":
+                    mensaje = "Capital de Aragon";
+                    break;
+                case "madrid":
+                    mensaje = "Capital de España,god";
+                    break;
+                case "barcelona":
+                    mensaje = "Capital de Cataluña";
+                    break;
+                default:
+                    mensaje = "Ni idea...";
+                    break;
+            }
+            document.getElementById("mensaje").innerHTML =mensaje;
+
+        }
+
+    </script>
+</body>
+</html>
