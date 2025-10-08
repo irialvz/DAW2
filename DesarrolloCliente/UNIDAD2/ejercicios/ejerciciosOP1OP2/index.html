@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="titulo"></h1>
+    <!-- EJERCICIO 1 -->
+    <p id="nombreCompleto"></p>
+    <p id="anyo"> </p>
+    <p id="mes"></p>
+    <p id="dia"></p>
+    <!-- EJERCICIO 2 -->
+    <p id="numero"></p>
+    <p id="exponencial"></p>
+    <!-- EJERCICIO 3 -->
+    <p id="numero"></p>
+    <p id="tipo"></p>
+    <p id="siguientes"></p>
+    <!-- EJERCICIO 4 -->
+    <p id="numeroA"> </p>
+    <p id="numeroB"> </p>
+    <p id="multiploA"></p>
+    <p id="multiploB"></p>
+    <!-- EJERCICIO 5 -->
+    <p id="meses"> </p>
+    <!-- EJERCICIO 6 -->
+    <p id="numeroA6"> </p>
+    <p id="numeroB6"> </p>
+    <p id="numeroMayor"></p>
+    <!-- EJERCICIO 7 -->
+    <p id="numeros30"></p>
+    <!-- ejercicio 8 -->
+    <p id="factorial"></p>
+    <!-- ejercicio 9 -->
+    <p id="mensajeCiudad"></p>
+    <!-- SEGUNDO BLOQUE OP2 -->
+    <!-- ejercicio 1 - alerta -->
+    <!-- ejercicio2 -->
+    <p id="dividendo"></p>
+    <p id="divisor"></p>
+    <p id="resultado"></p>
+    <!-- ejercicio3 -->
+    <p id="multiplicando"></p>
+    <p id="multiplicador"></p>
+    <p id="resultado3"></p>
+    <!-- ejercicio4 -->
+    <p id="numeroMinimo"></p>
+    <p id="numeroMaximo"></p>
+    <p id="numeroInfinito"></p>
+
+    <!-- ejercicio 5 -->
+    <p id="titulo"></p>
+    <p id="ovni"></p>
+    <p id="info"></p>
+    <button id="boton" onclick="verificar()"></button>
+    <p id="introducido"></p>
+    <script>
+
+    // Nota de Iria: Este script ha sido generado por Chatgpt
+    const eleccion = prompt("¿Qué hoja JS quieres probar? (op1 o op2)");
+    if (eleccion === "op1" || eleccion === "op2") {
+      const script = document.createElement("script");
+      script.src = `${eleccion}.js`;
+      document.body.appendChild(script);
+    } else {
+      alert("Elección no válida. Recarga la página e intenta con 'hoja1' o 'hoja2'.");
+    }
+  </script>
+</body>
+
+</html>
