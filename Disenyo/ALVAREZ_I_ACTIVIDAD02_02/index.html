@@ -8,6 +8,7 @@
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="card_style.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="alternativo.css">
 
 </head>
 <body>
@@ -15,27 +16,28 @@
    <header>
     <nav class="navbar bg-body-tertiary " >
     <div class="container-fluid">
-        <a class="navbar-brand">Navbar</a>
+        <a class="navbar-brand">Bikes-LE</a>
         <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn boton-busqueda" type="submit">Search</button>
         </form>
+        
     </div>
     </nav>
    </header>
    <!-- fin header y nav -->
     <!-- primer contenedor principal -->
-    <div class="container bg-secondary">
+    <div class="container">
         <div class="row p-5">
             <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                <img class="img-fluid" src="" alt="Fotografía café en mano">
+                <img class="img-fluid" src="imagenes/logo.png" alt="Fotografía café en mano" style="width: 500px; height: 500px;">
             </div>
             <div class="col-lg-6 mb-0 d-flex align-items-center">
                 <div class="text-align-left align-self-center">
-                    <h1 class="h1 text-principal"><b>Bikes-LE</b></h1>
-                    <h3 style="font-family: system-ui;">Tu próxima aventura empieza al pedalear.</h3>
+                    <h1 class="h1 text-principal">Bikes-LE</h1>
+                    <h3 style="font-family: system-ui; color: green; font-weight: bold;">Tu próxima aventura empieza al pedalear.</h3>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum sint, odio vitae dolore libero cumque quibusdam dicta similique aliquam quo provident, ullam aut esse totam mollitia corporis ipsa ab nisi.
+                        Lorem ipsum dolor, sit <a href="">prueba de enlace </a>amet consectetur adipisicing elit. Rerum sint, odio vitae dolore libero cumque quibusdam dicta similique aliquam quo provident, ullam aut esse totam mollitia corporis ipsa ab nisi.
                     </p>
                 </div>
             </div>
@@ -43,12 +45,14 @@
     </div>
     <!-- fin contenedor principal -->
      <!-- fotos separadoras -->
-    <div class="container bg-secondary mt-3 border">
-        <div class="col-auto p-5">
-            <div class=" col-md-8 col-lg-6 order-lg-last">
-                <img class="" src="" alt="Fotografía ">
-                <img class="" src="" alt="Fotografía ">
-                <img class="" src="" alt="Fotografía ">
+    <div class="container  mt-3 border">
+        <div class="row p-5">
+            <div class=" order-lg-last d-flex flex-wrap justify-content-between gap-3  ">
+                <img class="img-fluid flex-item" src="imagenes/foto1.png" alt="Fotografía " >
+                <img class="img-fluid flex-item" src="imagenes/foto2.png" alt="Fotografía " >
+                <img class="img-fluid flex-item" src="imagenes/foto1.png" alt="Fotografía " >
+                <img class="img-fluid flex-item" src="imagenes/foto2.png" alt="Fotografía " >
+
             </div>
         </div>
     </div>
@@ -60,7 +64,7 @@
                     <div class="card__glow"></div>
                     <div class="card__content">
                         <div class="card__badge">NEW</div>
-                        <div style="--bg-color: #a78bfa" class="card__image"></div>
+                        <div style="--bg-color: #000000" class="card__image"></div>
                         <div class="card__text">
                         <p class="card__title">Premium Design</p>
                         <p class="card__description">Hover to reveal stunning effects</p>
@@ -131,7 +135,6 @@
                         </div>
                     </div>
             </div>
-            <button>Button</button>                
             </div>
 
 
@@ -226,7 +229,9 @@
 
     </footer>
     <!-- End Footer -->
- 
+ <script>
+      
+ </script>
         
 </body>
 </html>

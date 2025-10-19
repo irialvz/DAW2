@@ -1,50 +1,52 @@
 <?php
 $opcion = $_POST["submit"] ?? "";
+$intentos = $_POST["intentos"] ?? 0;
+$numMin = $_POST["min"] ?? 0;
+$numMax = $_POST["max"] ?? 0;
+$jugada = $_POST["jugada"] ?? 0;
+$numero = $_POST["num"] ?? 0;
 switch ($opcion) {
     case 'Empezar':
-        $intentos = $_POST["intentos"];
         $numMin = 0;
-        $numMax = (2 ^ $intentos);
+        $numMax = 2**$intentos;
         $jugada = 1;
-        $numero = ($numMax / 2);
-        //RF2 Inicializo variables
-        //RF2 Leto intentos
-        // $min $mas
+        $numero = intval(($numMin + $numMax) / 2);
 
         break;
     case 'Jugar':
-        $resultado = $_POST["resultado"] ?? "";
+        $resultado = $_POST["resultado"];
         switch ($resultado) {
-            case '>':
-                //$numero = al siguiente numero de la potencia
-                // numero de la jugada ++
+            case ">":
+                $numMin = $numero + 1;
+                $numero = intval(($numMin + $numMax) / 2);
+                $jugada++;
                 break;
-            case '<':
-                //$numero = al anterior numero de la potencia
-                // numero de la jugada ++
+            case "<":
+                $numMax = $numero - 1;
+                $numero = intval(($numMin + $numMax) / 2);
+                $jugada ++;
                 break;
-            case '=':
-                header("Location:fin.php");
+            case "=":
+                header("Location:fin.php?jugada=".urlencode($jugada)."&intentos=".urlencode($intentos));
                 exit();
                 break;
         };
-        break;
-    case 'Reiniciar':
 
         break;
-    case 'Volver':
-        header("Location: index.php");
-        exit();
+    case 'Reiniciar':
+        $numMin = 0;
+        $numMax = 2**$intentos;
+        $jugada = 1;
+        $numero = intval(($numMin + $numMax) / 2);
+
         break;
+
     default:
         header("Location: index.php");
         exit();
         break;
 };
 
-
-$intentos = 0;
-$primerNumero = 0;
 ?>
 
 <!doctype html>
@@ -65,26 +67,26 @@ $primerNumero = 0;
 
         <form action="jugar.php" method="POST">
             <div class="bg-slate-300 p-5 rounded-lg mb-4">
-                <h4 class="text-2xl font-semibold mb-2">Jugada nº 1</h4>
-                <h2 class="text-xl">¿El número es <span class="font-bold">512</span>?</h2>
+                <h4 class="text-2xl font-semibold mb-2">Jugada nº <?=$jugada?>></h4>
+                <h2 class="text-xl">¿El número es <span class="font-bold"><?=$numero?></span>?</h2>
             </div>
 
             <input type="hidden" value="<?= $intentos ?>" name="intentos">
             <input type="hidden" value="<?= $numMin ?>" name="min">
             <input type="hidden" value="<?= $numMax ?>" name="max">
-            <input type="hidden" value="<?= $primerNumero ?>" name="num">
+            <input type="hidden" value="<?= $numero ?>" name="num">
             <input type="hidden" value="<?= $jugada ?>" name="jugada">
 
             <fieldset id="adivina" class="bg-gray-100 p-4 rounded-lg mb-4">
                 <legend class="text-lg font-semibold mb-2">El número a adivinar es</legend>
                 <label class="flex items-center mb-2">
                     <input type="radio" checked class="radio radio-primary mr-2" name="resultado"
-                           value=">">
+                           value=">" <?php if($_POST["resultado"]??""===">") echo "checked"?> >
                     <span>Mayor</span>
                 </label>
                 <label class="flex items-center mb-2">
                     <input type="radio" class="radio radio-primary mr-2" name="resultado"
-                           value="<">
+                           value="<" <?php if($_POST["resultado"]??null==="<") echo "checked"?> >
                     <span>Menor</span>
                 </label>
                 <label class="flex items-center mb-2">

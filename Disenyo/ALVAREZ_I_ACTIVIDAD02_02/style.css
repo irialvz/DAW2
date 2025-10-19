@@ -1,0 +1,40 @@
+h1,h2,h3 {
+    font-family: system-iu;
+    font-weight: bold;
+}
+p {
+    font-family: -apple-system;
+    color: gray;
+}
+a {
+  color: #007bff;          /* Color del texto del enlace */
+  text-decoration: none;   /* Quita el subrayado */
+  font-weight: bold;       /* Texto más grueso */
+  transition: 0.3s;        /* Transición suave para efectos */
+}
+
+a:hover {
+  color: #0056b3;          /* Color al pasar el mouse */
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+a:active {
+  color: #003f7f;          /* Color al hacer clic */
+}
+body {
+    color: #0d3b66;
+}
+
+.flex-item {
+  max-width: 100%;      /* No sobrepasa el ancho del contenedor */
+  width: 250px;          /* Tamaño base */
+  height: auto;          /* Mantiene proporciones */
+}
+/* EJERCICIO 7 */
+.boton-busqueda {
+    border-color: #003f7f;
+}
+.boton-busqueda:hover {
+    border-color: #0289ff;
+    color: #0289ff;
+}
