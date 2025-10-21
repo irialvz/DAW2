@@ -1,0 +1,17 @@
+<!-- caso a con numeros -->
+<script>
+    var f = new Date();
+    document.write("<strong>Caso A: Con  numeros</strong> "+ f.getDate()+"/"+(f.getMonth()+1)+"/"+f.getFullYear()+"<br>");
+</script>
+<!-- caso a con numeros -->
+<script>
+    let meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    var f = new Date();
+    document.write("<strong>Caso B: Meses </strong> "+ f.getDate()+" de "+meses[f.getMonth()]+" de "+f.getFullYear()+"<br>");
+</script>
+<!-- caso c dia de la semana -->
+<script>
+    let diasSemana = new Array("Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado");
+    var f= new Date();
+    document.write("<strong>Caso C: Día de la semana</strong> "+diasSemana[f.getDay()]+"<br>");
+</script>
