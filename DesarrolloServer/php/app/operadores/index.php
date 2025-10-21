@@ -22,6 +22,7 @@ for($a=1;$a<=10;$a++){
 function mayusculasReferencia(string &$nombre):void{
     echo "<hr>";
     echo "<h1>dentro de la funcion $nombre</h1>";
+    //strtoupper -> para convertir en mayusculas
     $nombre = strtoupper($nombre);
     echo "<h1>dentro de la funcion $nombre</h1>";
 }
