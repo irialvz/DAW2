@@ -1,0 +1,22 @@
+.fila{
+  display: flex; /* Coloca los divs hijos en fila */
+  justify-content: center; /* Centra las columnas en la fila (opcional) */
+  gap: 20px; /* Añade espacio entre columnas (opcional) */
+}
+
+.columna {
+  flex: 1; /* Hace que cada columna ocupe el mismo espacio (opcional) */
+  /* Otros estilos como ancho, color de fondo, etc. */
+  width: 200px;
+  height: 100px; 
+  background-color: lightgray;
+  padding: 10px;
+  box-sizing: border-box; /* Para incluir el padding en el ancho */
+}
+.columna img{
+    height: 100%;
+    width: 100%;
+}
+.container {
+  container-type: inline-size;
+}
