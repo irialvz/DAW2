@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  alert("Propiedad MAX_VALUE: " + Number.MAX_VALUE);
+  alert("Propiedad MIN_VALUE: " + Number.MIN_VALUE);
+  let maximoSeguroDeOperar = Number.MAX_SAFE_INTEGER;
+  let maximoSeguroDeOperar1 = Number.MAX_SAFE_INTEGER + 1;
+  let maximoSeguroDeOperar2 = Number.MAX_SAFE_INTEGER + 2;
+  console.log("Maximo Total:" + maximoSeguroDeOperar); // En número máximo seguro es:
+  9007199254740991;
+  console.log("Maximo Total:" + maximoSeguroDeOperar1);
+  console.log("Maximo Total:" + maximoSeguroDeOperar2); // si le sumamos 2 al número máximo seguro, nos sigue dando lo mismo. CUIDADO! Mejor usar BIGINT
+  alert("Propiedad NaN: " + Number.NaN);
+  alert("Propiedad NEGATIVE_INFINITY: " + Number.NEGATIVE_INFINITY);
+  alert("Propiedad POSITIVE_INFINITY: " + Number.POSITIVE_INFINITY);
+  var N1 = new Number(3.141592653589793);
+  alert("Letra PI formateada:" + N1.toPrecision(3));
+</script>

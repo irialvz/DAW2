@@ -1,0 +1,32 @@
+
+<script>
+    let arr = new Array('one', 'two', 'tres', 'cuatro', 'cinco', 'seis');
+    // - La longitud del array.
+    document.write("<strong>La longitud del array es de:</strong> " + arr.length + "<br>");
+    document.write("<hr>");
+    // - Sacar por pantalla la posición 4.
+    document.write("<strong>La cadena de la posicion 4 del array es:</strong>" + arr[4]+ "<br>");
+    // - Quita el último elemento de la matriz y se muestra por pantalla.
+    document.write("<hr>");
+    document.write("<strong>El array antes de eliminar el ultimo valor: </strong>" + arr.toString()+ "<br>");
+    let arrEliminado = arr.pop();
+    document.write("<strong>El array despues de eliminar el ultimo valor</strong>" + arr.toString()+ "<br>");
+    document.write("<strong>Se ha eliminado: </strong>" + arrEliminado+ "<br>")
+    // - Insertar dos nuevos elementos al principio de la matriz. 
+    document.write("<hr>");
+    document.write("<strong>Array antes de la insercion: </strong>" + arr.toString() + "<br>")
+    arr.push("siete");
+    arr.push("ocho");
+    document.write("<strong>Array despues de la insercion: </strong>" + arr.toString() + "<br>")
+
+</script>
+<!-- metodos en Arrays 
+    - push() para introducir un elemento al final del array
+    - pop() para eliminar el ultimo elemento
+    - join() para imprimir el array pero puedes pasar por parametro un separador especifico
+    - shift() elimina el primer elemento y desplaza los demas a un indice menor
+    - length muestra el tamaño del array
+
+
+
+-->
