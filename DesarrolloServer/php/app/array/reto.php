@@ -1,23 +1,25 @@
 <?php
+$accesos = $_POST['accesos']??[];
+
 if (isset($_POST['submit'])) {
     //Leo el nuevo nombre
     $nombre = $_POST['name'];
-
+    $nombre = trim($nombre);
     //Leo el array que contendrá todos los nombres anteriores
     //Observca que es un array asociativo por nombres cuyo valor de cada posición
     //es el números de clicks que ha echo
-    $accesos = $_POST['accesos'];
 
     //Agrego el nuevo dato. Fíjate que si ya existiera esa posición (ese nombre)
     //accederé a ella e incrementaré el número de accesos
     //Si no existiera se agregará
     //Esto en otros lenguajes implicaría buscar a ver si existe, en php no hace falta
-    $accesos[$nombre] ++;
+    isset($accesos[$nombre]) ? $accesos[$nombre]++: $accesos[$nombre] = 1;
 }
 ?>
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
@@ -26,7 +28,7 @@ if (isset($_POST['submit'])) {
     <legend>Click de usuarios</legend>
     <form action="" method="POST">
         Nombre
-        <input type="text" name="name" id=""><br />
+        <input type="text" value="<?=$nombre??"" ?>" name="name" id=""><br />
         <input type="submit" value="Click" name="submit">
         <?php
         //Guardo el array para poderlo leer
