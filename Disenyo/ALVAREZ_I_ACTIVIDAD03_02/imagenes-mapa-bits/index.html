@@ -1,42 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Actividad 03_02 — Formatos de imagen</title>
+
+  <!-- FAVICON: prueba varios tipos  -->
+  <!-- PNG -->
+  <link rel="icon" type="image/png" href="img/libro-de-cocina.png" />
+  <!-- WEBP (algunos navegadores lo soportan) -->
+  <!-- <link rel="icon" type="image/webp" href="img/NewPiskel.webp" /> -->
+  <!-- ICO -->
+  <!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico" /> -->
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="contenedor">
-        <h2>Ejercicio 1</h2>
-        <div class="fila">
-            <div class="columna">
-                <img src="img/fotoEjer1.jpg" alt="">
-                <p>Formato JPG</p>
-                <p>58K</p>
-            </div>
-            <div class="columna">
-                <img src="img/fotoEjer1.png" alt="">
-                <p>Formato PNG</p>
-                <p>326K</p>
-            </div>
-            <div class="columna">
-                <img src="img/fotoEjer1.svg" alt="">
-                <p>Formato SVG</p>
-                <p>16K</p>
-            </div>
-            <div class="columna">
-                <img src="img/fotoEjer1.wbmp" alt="">
-                <p>Formato WBMP</p>
-                <p>34K</p>
-            </div>
-            <div class="columna">
-                <img src="img/fotoEjer1.webp" alt="">
-                <p>Formato WEBP</p>
-                <p>36K</p>
-            </div>
-        </div>            
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Actividad: Formatos de imagen para interfaces web</h1>
     </div>
+  </header>
 
+  <main class="wrap grid">
+    <!-- EJERCICIO 1: Galería comparativa -->
+    <section id="ej1" class="card">
+      <h2>Ejercicio 1 — Galería comparativa</h2>
+      <p class="help">Añade 5 versiones de la misma imagen en la carpeta <code>img/</code> (ej: foto.jpg, foto.png, foto.webp, foto.gif, foto.avif)</p>
+
+      <div class="gallery">
+        <!-- Copia/pega cada bloque <figure> con tus nombres reales -->
+        <figure class="thumb">
+          <img src="img/fotoEjer1.jpg" alt="Foto en JPG" />
+          <figcaption>foto.jpg — tamaño: <span class="size-placeholder">-58 KB</span></figcaption>
+        </figure>
+
+        <figure class="thumb">
+          <img src="img/fotoEjer1.png" alt="Foto en PNG" />
+          <figcaption>foto.png — tamaño: <span class="size-placeholder">326 KB</span></figcaption>
+        </figure>
+
+        <figure class="thumb">
+          <img src="img/fotoEjer1.webp" alt="Foto en WebP" />
+          <figcaption>foto.webp — tamaño: <span class="size-placeholder">36 KB</span></figcaption>
+        </figure>
+
+        <figure class="thumb">
+          <img src="img/giphy.gif" alt="Foto en GIF" />
+          <figcaption>foto.gif — tamaño: <span class="size-placeholder">528 KB</span></figcaption>
+        </figure>
+
+        <figure class="thumb">
+          <img src="img/fotoEjer1.avif" alt="Foto en AVIF" />
+          <figcaption>foto.avif — tamaño: <span class="size-placeholder">16 KB</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- EJERCICIO 2: Favicon -->
+    <section id="ej2" class="card">
+      <h2>Ejercicio 2 — Favicon</h2>
+      <p>En el <code>&lt;head&gt;</code> hay ejemplos de favicon.</p>
+    </section>
+
+    <!-- EJERCICIO 3: GIF animado -->
+    <section id="ej3" class="card">
+      <h2>Ejercicio 3 — GIF de carga</h2>
+      <div class="loading-area">
+        <img src="img/NewPiskel.gif" alt="Icono de carga" class="loading-gif" />
+      </div>
+    </section>
+
+    <!-- EJERCICIO 4: Sprite PNG -->
+    <section id="ej4" class="card">
+      <h2>Ejercicio 4 — Sprite de íconos (PNG)</h2>
+      <p>Coloca <code>img/sprite.png</code> (al menos 4 íconos) y usa las clases <code>.icono.home</code>, <code>.icono.search</code>, etc.</p>
+
+      <nav class="sprite-nav" aria-label="Navegación de ejemplo">
+        <ul>
+          <li><a href="#" class="nav-link"><span class="icono home" aria-hidden="true"></span><span class="sr-only">Inicio</span></a></li>
+          <li><a href="#" class="nav-link"><span class="icono search" aria-hidden="true"></span><span class="sr-only">Buscar</span></a></li>
+          <li><a href="#" class="nav-link"><span class="icono user" aria-hidden="true"></span><span class="sr-only">Perfil</span></a></li>
+          <li><a href="#" class="nav-link"><span class="icono settings" aria-hidden="true"></span><span class="sr-only">Ajustes</span></a></li>
+        </ul>
+      </nav>
+
+    </section>
+
+    <!-- EJERCICIO 5: WebP y <picture> -->
+    <section id="ej5" class="card">
+      <h2>Ejercicio 5 — WebP y &lt;picture&gt;</h2>
+      <p>Convierte una imagen grande a WebP y usa como fondo. También añade un &lt;picture&gt; que cargue WebP si el navegador lo soporta.</p>
+
+      <article class="hero">
+        <!-- Fondo en CSS: .hero usa background-image con webp (ver style.css) -->
+        <div class="hero-content">
+          <h1>Sección con fondo WebP</h1>
+          <p>Contenido encima del fondo (h1, p, botones...)</p>
+        </div>
+      </article>
+
+      <h3>Ejemplo &lt;picture&gt;</h3>
+      <picture>
+        <source srcset="img/fotoEjer1.webp" type="image/webp">
+        <source srcset="img/fotoEjer1.png" type="image/png">
+        <img src="img/fotoEjer1.png" alt="Imagen alternativa (PNG)" style="max-width:100%; border-radius:6px;">
+      </picture>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Entrega: APELLIDO_INICIAL NOMBRE_A_DC_03_02.pdf</p>
+    </div>
+  </footer>
+
+  <!-- Opcional: pequeño script para el botón "Cargando..." (simula la acción) -->
+  <script>
+    document.getElementById('cargandoBtn')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = 'Simulando...';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Cargando...';
+        alert('Simulación finalizada (quita este alert si no lo quieres).');
+      }, 1500);
+    });
+  </script>
 </body>
 </html>

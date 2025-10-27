@@ -1,22 +1,157 @@
-.fila{
-  display: flex; /* Coloca los divs hijos en fila */
-  justify-content: center; /* Centra las columnas en la fila (opcional) */
-  gap: 20px; /* Añade espacio entre columnas (opcional) */
+/* -------------------------
+   Reset / utilidades mínimas
+   ------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 18px; }
+
+/* Visually hidden (accessible labels) */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
 }
 
-.columna {
-  flex: 1; /* Hace que cada columna ocupe el mismo espacio (opcional) */
-  /* Otros estilos como ancho, color de fondo, etc. */
-  width: 200px;
-  height: 100px; 
-  background-color: lightgray;
-  padding: 10px;
-  box-sizing: border-box; /* Para incluir el padding en el ancho */
+/* -------------------------
+   Layout principal
+   ------------------------- */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.4;
 }
-.columna img{
-    height: 100%;
-    width: 100%;
+
+.site-header {
+  background: linear-gradient(90deg,#0b63a3,#0078d7);
+  color: #fff;
+  padding: 22px 0;
+  margin-bottom: 20px;
 }
-.container {
-  container-type: inline-size;
+.site-header .lead { opacity: 0.95; margin-top: 6px; }
+
+/* Grid de tarjetas (contenedores para cada ejercicio) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  align-items: start;
 }
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(12,20,30,0.06);
+  min-height: 160px;
+}
+
+/* Encabezados y notas */
+.card h2 { color: #0b63a3; margin-bottom: 8px; font-size: 1.1rem; }
+.help { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+.nota { margin-top: 12px; font-size: 0.9rem; color: #444; }
+
+/* -------------------------
+   EJERCICIO 1: galería
+   ------------------------- */
+.gallery {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.thumb {
+  width: calc(50% - 6px);
+  background: #fbfcfd;
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+.thumb img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.thumb figcaption { font-size: 0.85rem; margin-top: 6px; color: #333; }
+
+/* -------------------------
+   EJERCICIO 3: gif de carga
+   ------------------------- */
+.loading-area {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+.loading-gif { width: 200px; height: 200px; object-fit: contain; background: #fff; padding: 6px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.btn {
+  background: #0078d7;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* -------------------------
+   EJERCICIO 4: sprite nav
+   ------------------------- */
+
+/* Estructura nav */
+.sprite-nav ul { list-style: none; display:flex; gap:10px; padding:0; margin-top:10px; }
+.nav-link { display:inline-flex; align-items:center; padding:8px; border-radius:8px; text-decoration:none; }
+
+/* Icono base (asume íconos 32x32 en una tira horizontal)
+   Ajusta width/height y background-position según tu sprite real */
+.icono {
+  display:inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url('img/sprite.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+/* Si tu sprite es una tira horizontal de 4 iconos (cada 32px):
+   x = 0, -32px, -64px, -96px */
+.icono.home     { background-position:   0   0; }
+.icono.search   { background-position: -32px 0; }
+.icono.user     { background-position: -64px 0; }
+.icono.settings { background-position: -96px 0; }
+
+/* Hover / focus */
+.nav-link:focus, .nav-link:hover {
+  box-shadow: 0 6px 18px rgba(7,22,44,0.06);
+  transform: translateY(-2px);
+}
+
+/* -------------------------
+   EJERCICIO 5: hero con WebP
+   ------------------------- */
+.hero {
+  margin-top: 12px;
+  border-radius: 10px;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  /* Fondo: coloca tu webp en img/grande.webp — cambia si tu archivo tiene otro nombre */
+  background-image: url('img/grande.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* En caso de que quieras fallback a PNG desde CSS, usa media queries o @supports no son fiables; mejor usa <picture> en HTML */
+.hero-content {
+  background-image: url(img/fotoEjer1.webp);
+  background-size: cover;
+  padding: 18px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* -------------------------
+   Footer
+   ------------------------- */
+.site-footer { background: #0b63a3; color: #fff; padding: 16px 0; margin-top: 26px; text-align:center; border-radius: 0 0 8px 8px; }
