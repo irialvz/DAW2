@@ -1,0 +1,37 @@
+<!-- Ejercicio: La administración general de loterías europea, nos ha encomendado generar
+un script para rellenar la puesta de EUROMILLONES de forma aleatoria. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="fecha"></h1>
+    <div style="width:15%; border: black solid 3px;padding:10px;">
+        <h4>EUROMILLON</h4>
+        <hr>
+        <p id="demo"></p>
+        <hr>
+    </div>
+</body>
+<script>
+    let fechaActual = new Date();
+    document.getElementById("fecha").innerHTML = "Euromillon del "+fechaActual.getDate()+"/"+fechaActual.getMonth()+"/"+fechaActual.getFullYear();
+    let numeros = [];
+    numeros.length = 5;
+    for (let i=1;i<=5;i++){
+        numeros.push(Math.ceil(Math.random() * 50));
+    }
+    document.getElementById("demo").innerHTML = numeros.join(" ");
+
+    let estrellas = [];
+    estrellas.length = 2;
+    for (let i=1;i<=2;i++){
+        estrellas.push(Math.ceil(Math.random() * 10));
+    }
+    console.log(estrellas.length)
+    document.getElementById("demo").innerHTML += "+" + estrellas.join(" ");
+</script>
+</html>

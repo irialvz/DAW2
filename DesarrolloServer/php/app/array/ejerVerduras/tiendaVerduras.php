@@ -18,13 +18,13 @@ $datos = json_decode($contenido, true);
 <body style="margin: 10%">
 
 <?php
-if (!isset($_POST['submit'])):?>
-    <?php mostrarFormulario($datos); ?>
-<?php else: ?>
-<?php
-    mostrarFactura();
-    mostrarInventario();
-endif;
+if (isset($_POST['submit'])){
+    mostrarFactura($datos);
+    mostrarInventario($datos);
+} else {
+    mostrarFormulario($datos);
+
+}
 ?>
 </body>
 </html>
@@ -33,27 +33,25 @@ function mostrarFormulario($datos){
     echo " 
     <fieldset>
       <legend>Compra de verduras</legend>
-      <form>";
+      <form action='tiendaVerduras.php' method='post'>";
 
-    echo "Prodcuto: <select name='prodcuto'>";
     foreach ($datos as $verduras => $informacion) {
-        echo "<option value='$verduras'>$verduras (disponibles $informacion[unidades])</option>";
+        echo "$verduras (disponibles $informacion[unidades])</br><input value='' name='$verduras'></input></br>";
     }
-    echo "</select>";
-    echo "</br>Unidades: <input type='number' name='unidades'>";
     echo "</br><input type='submit' name='submit' value='Comprar'>";
       echo "</form>
     </fieldset>
     ";
 
 }
-function mostrarFactura(/*¿POST del formulario?*/){
+function mostrarFactura($datos){
     $total=0;
     $factura="<fieldset><legend>Factura de cliente</legend>";
     foreach ($datos as $verduras => $informacion){
         $precio = $informacion["precio"];
         $unidades = $informacion["unidades"];
         $cantidadSolicitada = $_POST[$verduras];
+        $cantidadSolicitada = (int) $cantidadSolicitada;
         $cantidadSolicitada = $cantidadSolicitada > $unidades ? $unidades : $cantidadSolicitada;
         $subtotal = $cantidadSolicitada * $precio;
         if ($cantidadSolicitada > 0){
@@ -64,18 +62,20 @@ function mostrarFactura(/*¿POST del formulario?*/){
     }
     $factura.="<h3>Total de la factura: $total</h3>";
     $factura.="</fieldset>";
-
+    echo $factura;
 
 }
-function mostrarInventario(/*POST del formulario???*/){
+function mostrarInventario($datos){
     $inventario="<fieldset><legend>Inventario de la tienda</legend>";
     foreach ($datos as $verduras => $informacion){
         $unidades = $informacion["unidades"];
         $cantidadSolicitada = $_POST[$verduras];
+        $cantidadSolicitada = (int) $cantidadSolicitada;
         $cantidadSolicitada = $cantidadSolicitada > $unidades ? $unidades : $cantidadSolicitada;
         $unidades -= $cantidadSolicitada;
         $inventario.="<p>$unidades de $verduras actualmente</p>";
     }
     $inventario.="</fieldset>";
+    echo $inventario;
 }
 ?>

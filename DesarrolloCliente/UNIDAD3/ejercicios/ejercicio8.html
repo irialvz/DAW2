@@ -1,0 +1,36 @@
+ <!-- Introduce el tamaño de una matriz, indicando número de filas (x) y número de
+columnas (y). Crea los bucles necesarios para poder mostrar por pantalla aquellas
+posiciones que contengan ambas coordenadas. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    let error = false;
+    let matrizFila = prompt("Numero de filas? ");
+    matrizFila = Number(matrizFila);
+    let matrizColumna = prompt("Numero de columna? ");
+    matrizColumna = Number(matrizColumna);
+    if (matrizFila <= 0 || matrizColumna <= 0){
+        error = true;
+    }
+    if (!error){
+        let matriz = [];
+        for ( let i = 0;i<matrizFila;i++){
+            matriz[i]=[];
+            for (let j=0;j<matrizColumna;j++){
+                matriz[i][j]= "["+i+"."+j+"]";
+                document.getElementById("demo").innerHTML += matriz[i][j];
+            }
+            document.getElementById("demo").innerHTML += "<br>";
+        }
+    }
+
+</script>
+</html>

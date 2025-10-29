@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    let error = false;
+    let radio = prompt("Radio de la circunferencia?")
+    radio = Number(radio);
+    if(radio <= 0){
+        error = true;
+    }
+    if (!error){
+        let longitud = 2*Math.PI*radio;
+        document.getElementById("demo").innerHTML = "La longitud de la circunferencia con radio "+radio+" es de "+longitud;
+    }
+</script>
+</html>
