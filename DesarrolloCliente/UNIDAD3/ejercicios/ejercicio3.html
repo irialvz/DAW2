@@ -1,0 +1,38 @@
+<!-- Ejercicio: Crea un script que recorra un bucle desde el 1 hasta el 500. Por pantalla solo
+mostraremos los múltiplos de 3 y el número de números que no son primos -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    
+</body>
+<script>
+    function esPrimo(numero){
+        if (numero<= 1){
+            return false;
+        }
+        for (let x=2;x<=numero;x++){
+            if (numero%x === 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    let contadorNoPrimos=0;
+    for (let i = 1;i<=500;i++){
+        if (i%3===0 ){
+            document.getElementById("demo").innerHTML += i + " ";
+        }
+        if(!esPrimo(i)){
+            contadorNoPrimos++;
+        }
+    }
+    document.getElementById("demo").innerHTML += "<br>cantidad de numeros no primos:" + contadorNoPrimos;
+
+</script>
+</html>

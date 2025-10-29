@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    let tallaIntroducida = prompt("Talla?")
+    // const TallasEuropeas = ["XXL", "XL","L","M","S", "XS", "XXS"];
+    switch (tallaIntroducida){
+        case "XXL":
+        case "XL":
+        case "L":
+            console.log("Grande");
+            break;
+        case "M":
+            console.log("Mediana");
+            break;
+        case "S":
+        case "XS":
+        case "XXS":
+            console.log("Pequeña");
+            break;
+        default:
+            console.log("no valido")
+
+    }
+</script>
+</html>

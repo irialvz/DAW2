@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    <style>
+
+    </style>
+<body>
+
+    <header class="site-header">
+    <div class="wrap">
+      <h1>Actividad: Formatos de imagen para interfaces web - Graficos vectoriales</h1>
+    </div>
+  </header>
+  <main>
+    <hr>
+    <section id="ej1">
+        <h1>Ejercicio 1</h1>
+        <h3>imagenes PNG</h3></br>
+
+        <div class="fotos rasterizadas">
+            <figure class="thumb">
+                <img class="foto100" src="img/octavio-fossatti-wW177LpJYV0-unsplash.jpg"alt="Foto en JPG" />
+                <figcaption>JPG — tamaño: <span class="size-placeholder">- 100px</span>— espacio: <span class="size-placeholder">- 57K</span><</figcaption>
+            </figure>
+            <figure class="thumb">
+                <img src="img/octavio-fossatti-wW177LpJYV0-unsplash.jpg" alt="Foto en JPG" style="width: 400px;height: 400px;" />
+                <figcaption>JPG — tamaño: <span class="size-placeholder">- 400px</span>— espacio: <span class="size-placeholder">- 57K</span></figcaption>
+            </figure>
+        </div>
+        <h3>imagenes svg</h3></br>
+
+        <div class="fotos vectoriales">
+            <figure class="thumb">
+                <img class="foto100" src="img/undraw_my-resume_etai.svg" alt="Foto en JPG" />
+                <figcaption>SVG— tamaño: <span class="size-placeholder">-100px </span>— espacio: <span class="size-placeholder">- 9,2K</span></figcaption>
+            </figure>
+            <figure class="thumb">
+                <img src="img/undraw_my-resume_etai.svg" alt="Foto en JPG" style="width: 400px;height: 400px;"/>
+                <figcaption>SVG — tamaño: <span class="size-placeholder">- 400px</span>— espacio: <span class="size-placeholder">- 9,2K</span></figcaption>
+            </figure>
+        </div>
+        <!-- 
+            ¿Cuál se ve borrosa o pixelada al agrandarla?
+                JPG al ampliarlo se ve un poco mas borrosa,pero en mi caso muuuuuy poco.
+        
+            ¿Cuál mantiene los bordes nítidos?
+                ambos
+            ¿Qué archivo ocupa más espacio en disco (en KB)? 
+                el jpg
+        -->
+    </section>
+    <hr>
+    <section id="ej2">
+        <h1>Ejercicio 2 - SVG personalizado</h1>
+        <div class="fotos ">
+            <figure class="thumb">
+                   <svg width="200" height="200">
+                        <circle cx="100" cy="100" r="50" fill="blue" />
+                        <rect x="10" y="10" width="80" height="80" fill="red" />
+                    </svg>
+                <figcaption>SVG personalizado— tamaño: <span class="size-placeholder">-200px </span>— espacio: <span class="size-placeholder">- 166K</span></figcaption>
+            </figure>
+        </div>
+    </section>
+    <hr>
+<section id="ej3">
+  <h1>Ejercicio 3 - SVG con hover</h1>
+  <div class="fotos">
+    <figure class="thumb">
+      <!-- SVG inline — aquí el hover SI FUNCIONA -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+        <defs>
+          <style>
+            /* mejor controlar el fill desde CSS, no con atributo en el elemento */
+            .circuloHover {
+              fill: green;
+              transition: fill 0.18s ease, filter 0.18s ease;
+            }
+            .circuloHover:hover {
+              fill: #ff9800;
+              filter: drop-shadow(0 0 6px rgba(0,0,0,0.7));
+              cursor: pointer;
+            }
+          </style>
+        </defs>
+
+        <!-- Dibujos -->
+ 
+        <rect  x="10" y="10" width="120" height="80" />
+        <circle class="circuloHover" cx="100" cy="100" r="50" />
+      </svg>
+
+      <figcaption>
+        SVG personalizado — tamaño: <span class="size-placeholder">200px</span> — espacio: <span class="size-placeholder">166K</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+<!-- 
+    ¿Qué diferencias ves entre insertar el SVG como imagen (<img>) y como SVG inline?
+        que si lo insertas como imagen es mas facil y no ensucias el codigo como si lo haces inline.
+    
+    ¿Qué ventajas y desventajas tiene cada método para su manipulación con CSS? 
+        manipular el css del inline es mas ajetreado y sucio porque va incrustado en el html y hace que hay mucho codigo,es mas facil 
+        meter el src del svg y ya.
+    -->
+
+
+
+    
+  </main>
+</body>
+</html>

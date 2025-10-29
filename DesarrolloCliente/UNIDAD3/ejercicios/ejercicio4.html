@@ -1,0 +1,36 @@
+<!-- Haz un script para mostrar por pantalla el número menor y mayor. Para ello,
+se introducirán en el código 10 números enteros dentro de un array y se comprobarán
+cada una de las posiciones. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    const numeros = [];
+    numeros.length = 10;
+    for (let i=0;i<=10;i++){
+        /*
+            Math.floor para redondear
+            Math.random genera num aleatorios entre 0 y 1 
+        */
+       /*Ejercicio*/
+        // numeros[i]=Math.floor(Math.random() * 10);
+        numeros[i]=prompt("Introduce el numero en el indice "+i);
+        if(numeros[i] === ""){
+            numeros[i] = 0;
+        }
+    }
+    let numeroMayorArray = numeros.sort(function (a,b){
+        return b-a;
+    })
+
+    document.getElementById("demo").innerHTML += numeros.toString()+"<br>El numero mayor del array es "+numeroMayorArray[0] + "<br>El numero menor del array es " + numeroMayorArray[numeroMayorArray.length-1];
+
+</script>
+</html>
