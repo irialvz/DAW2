@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <style>
+        input {
+            margin:5px
+        }
+
+    </style>
+    <body>
+        <form action="" id="calculadora">
+            <h1>Calculadora</h1>
+            <input type="text" maxlength="20" id="resultado" readonly>
+            <br>
+            <input type="button" value="C" id="reset" onclick="limpiar()">
+            <br>
+            <input type="button" value="7" id="7" onclick="asignarNumero(7)">
+            <input type="button" value="8" id="8" onclick="asignarNumero(8)">
+            <input type="button" value="9" id="9" onclick="asignarNumero(9)">
+            <input type="button" value="/" id="dividir" onclick="asignarOperador('/')">
+            <br>
+            <input type="button" value="4" id="4" onclick="asignarNumero(4)">
+            <input type="button" value="5" id="5" onclick="asignarNumero(5)">
+            <input type="button" value="6" id="6" onclick="asignarNumero(6)">
+            <input type="button" value="*" id="multiplicar" onclick="asignarOperador('*')">
+            <br>
+            <input type="button" value="3" id="3" onclick="asignarNumero(3)">
+            <input type="button" value="2" id="2" onclick="asignarNumero(2)">
+            <input type="button" value="1" id="1" onclick="asignarNumero(1)">
+            <input type="button" value="+" id="sumar" onclick="asignarOperador('+')">
+            <br>
+            <input type="button" value="0" id="0" onclick="asignarNumero(0)">
+            <input type="button" value="=" id="igual" onclick="operar()">
+            <!-- <input type="button" value="," id=","> -->
+            <input type="button" value="-" id="restar" onclick="asignarOperador('-')">
+
+
+
+
+        </form>
+
+    </body>
+    <script>
+        let operacion = [];
+        let numero1="";
+        let numero2="";
+        let operador="";
+        function asignarNumero(numeroIntroducido){
+            if (operador === ""){
+                numero1 += numeroIntroducido;
+                document.getElementById("resultado").value =numero1;                
+            }else{
+                numero2+=numeroIntroducido;
+                document.getElementById("resultado").value =numero1+operador+numero2;                
+            }
+
+        }
+        function asignarOperador(operadorIntroducido){
+            if (numero1==="")return;
+            operador = operadorIntroducido;
+            operacion[0]=numero1;
+            operacion[1]=operador;
+            document.getElementById("resultado").value =numero1 +operador;
+        }
+
+        function operar(){
+            if (numero1 === "" || operador === "" || numero2 === "") return;
+            let resultado = 0;
+            operacion[2]=numero2;
+            switch(operador){
+                case '+':
+                    resultado = parseFloat(numero1)+parseFloat(numero2);
+                    break;
+                case '-':
+                    resultado = parent(numero1)-parseFloat(numero2);
+                    break;
+                case '/':
+                    resultado = pageXOffset(numero1)/parseFloat(numero2)
+                    break;
+                case '*':
+                    resultado = parseFloat(numero1)*parseFloat(numero2)
+                    break;
+            }
+            document.getElementById("resultado").value = resultado;
+            numero1=resultado.toString();
+
+        }
+        function limpiar(){
+            numero1="";
+            numero2="";
+            operador="";
+            document.getElementById("resultado").value = "";
+
+        }
+
+
+    </script>
+</html>
