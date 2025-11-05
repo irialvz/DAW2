@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function clicador(){
+            if(typeof(Storage)!== "undefined"){
+                if(localStorage.clickcount){
+                    localStorage.clickcount = Number(localStorage.clickcount)+1;
+                }else {
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "Has hecho click " + localStorage.clickcount + " veces desde la primera vez"
+            } else {
+                document.getElementById("result").innerHTML = "Tu navegador no sosporta almacenamiento web";
+            }
+        }
+        function borrado(){
+            localStorage.clear();
+
+        }
+    </script>
+</head>
+<body>
+    <p><button onclick="clicador()"type="button">CLICK</button></p>
+    <p><button onclick="borrado()"type="button">RESET</button></p>
+    <div id="result"></div>
+    <p>COntador</p>
+
+    
+</body>
+</html>
