@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    
+</body>
+<script>
+    //Devuelve el tamaño del área visible (viewport) de la ventana.
+    console.log(window.innerWidth,window.innerHeight);
+    console.log(window.location.href);
+    console.log(window.navigator.userAgent);
+    //Devuelve el tamaño del área visible (viewport) del dispositivo.
+    console.log(window.screen.width,window.screen.height);
+    document.getElementById("demo").innerHTML = "Esta pagina tiene la url <a href=\""+window.location.href+"\">"+window.location.pathname+"</a><br>Esta pagina tiene una anchura y altura de "+window.innerWidth+"px "+window.innerHeight+"px"
+</script>
+</html>

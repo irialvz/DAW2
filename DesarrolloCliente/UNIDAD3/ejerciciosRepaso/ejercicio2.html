@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="abrirEnlace('youtube')">Abrir youtube</button>
+    <button onclick="abrirEnlace('GOOGLE')">Abrir google</button>
+    <button onclick="abrirEnlace('wikipedia')">Abrir wikipedia</button>
+
+</body>
+<script>
+    function abrirEnlace(aplicacion){
+        switch(aplicacion.toLowerCase()){
+            case "youtube":
+                window.location.href = "https://www.youtube.com";
+                //open('https://www.youtube.com','_blank') => abre en otra pestaña. Href abre el enlace encima de la pagina
+                break;
+            case "google":
+                window.location.href = "https://www.google.com";
+                break;
+            case "wikipedia":
+                window.location.href = "https://www.wikipedia.com";
+                break;
+        }
+    }
+
+</script>
+</html>
