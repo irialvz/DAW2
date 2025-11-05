@@ -74,10 +74,10 @@
                     resultado = parseFloat(numero1)+parseFloat(numero2);
                     break;
                 case '-':
-                    resultado = parent(numero1)-parseFloat(numero2);
+                    resultado = parseFloat(numero1)-parseFloat(numero2);
                     break;
                 case '/':
-                    resultado = pageXOffset(numero1)/parseFloat(numero2)
+                    resultado = parseFloat(numero1)/parseFloat(numero2)
                     break;
                 case '*':
                     resultado = parseFloat(numero1)*parseFloat(numero2)
@@ -85,6 +85,7 @@
             }
             document.getElementById("resultado").value = resultado;
             numero1=resultado.toString();
+            numero2="";
 
         }
         function limpiar(){

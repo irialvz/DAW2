@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Noticias pagina web</h2>
+    <p>
+      En el instituto, como ESCUELA PROMOTORA DE SALUD y dentro del proyecto de
+      salud, llevamos varios años colaborando con Donantes de Sangre de
+      Zaragoza. Esta colaboracion consiste en facil itarles, un espacio en
+      nuestro...
+    </p>
+    <p id="demo"></p>
+  </body>
+  <script>
+    function desplegable() {
+      document.getElementById("demo").innerHTML =
+        "...centro, para que a cualquier persona" +
+        " de nuestra comunidad educativa le resulte mas accesible realizar su donacion de sangre." +
+        "<br>La siguiente donacion sera:" +
+        "<br>Fecha: Martes 3 de octubre." +
+        "<br>Lugar: Biblioteca del IES" +
+        "<br>Horario: de 9:30 a 13:00 horas" +
+        "<br>Recordad que TODOS EN CUALQUIER MOMENTO PODEMOS NECESITAR SANGRE";
+    }
+  </script>
+  <button type="button" onclick="desplegable()">Seguir leyendo</button>
+</html>
