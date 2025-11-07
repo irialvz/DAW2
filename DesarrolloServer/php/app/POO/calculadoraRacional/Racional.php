@@ -21,11 +21,12 @@ class Racional{
 //            $this->den = $den;
 //        }
         // FORMA 2 DE EXTRAER NUMERO DEL STRING
-        if (is_string($num)) {
+        if (is_string($num) ) {
             $valores = explode("/", $num);
             $this->num = $valores[0];
-            $this->den = $valores[1];
-            if (is_null($valores[1])){
+            if (count($valores) ==2) {
+                $this->den = $valores[1];
+            }else {
                 $this->den = 1;
             }
         }else {
@@ -37,4 +38,47 @@ class Racional{
     public function __toString(){
         return "$this->num/$this->den";
     }
+    function sumarGeneralizado(Racional $num1):Racional{
+        $resultadoNumerador = ($this->num * $num1->den)+($this->den*$num1->num);
+        $resultadoDenominador = $this->den*$num1->den;
+        return new Racional($resultadoNumerador, $resultadoDenominador);
+
+    }
+    function restar(Racional $num1):Racional{
+        $resultadoNumerador = ($this->num * $num1->den)-($this->den*$num1->num);
+        $resultadoDenominador = $this->den*$num1->den;
+        return new Racional($resultadoNumerador, $resultadoDenominador);
+    }
+    function multiplicar(Racional $num1):Racional{
+        $numerador=$this->num * $num1->num;
+        $denominador=$this->den * $num1->den;
+        return new Racional($numerador, $denominador);
+    }
+    function dividir(Racional $num1):Racional{
+        $numerador = $this->num * $num1->den;
+        $denominador = $this->den * $num1->num;
+        return new Racional($numerador, $denominador);
+    }
+    function simplificar():void{
+        $resultado = $this->mcd_tradicional($this->num,$this->den);
+        $this->num = ($this->num /$resultado );
+        $this->den = ($this->den /$resultado );
+    }
+    private function mcd_tradicional($a,$b){
+        while($b != 0){
+            $resto = $a % $b;
+            $a = $b;
+            $b = $resto;
+        }
+        return $a;
+
+    }
+
+    public static function sumar_estatico(Racional $num1,Racional $num2):Racional{
+        $resultadoNumerador = ($num1->num * $num2->den)+($num1->den*$num2->num);
+        $resultadoDenominador = $num1->den*$num2->den;
+        return new Racional($resultadoNumerador, $resultadoDenominador);
+
+    }
+
 }
