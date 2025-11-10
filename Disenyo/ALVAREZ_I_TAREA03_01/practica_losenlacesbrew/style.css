@@ -9,6 +9,13 @@
 h1{
     font-family:'Rubik Bubbles',system-ui;
 }
+h2{
+  font-family: 'Delius',system-ui;
+  font-weight:700;
+}
+p{
+  font-family: 'Delius',system-ui;
+}
 .btn-cafe {
   width: 80px;
   height: 25px;
