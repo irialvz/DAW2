@@ -1,0 +1,44 @@
+/* Navbar */
+.logo img {
+  width: 150px;
+  height: 80px;
+  background: url(imagenes_originales/logo.png);
+  border-radius: 50%;
+  
+}
+h1{
+    font-family:'Rubik Bubbles',system-ui;
+}
+.btn-cafe {
+  width: 80px;
+  height: 25px;
+  background-color: #5c4433;
+  border-radius: 5px;
+}
+
+/* Hero */
+.hero {
+  height: 80vh;
+  background-color: #d6d6d6;
+  background: url(imagenes_originales/fondo.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Secciones "Sobre nosotros" */
+.img-placeholder {
+  background-color: #bdbdbd;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.footer-box {
+  background-color: #bdbdbd;
+  height: 60px;
+}
