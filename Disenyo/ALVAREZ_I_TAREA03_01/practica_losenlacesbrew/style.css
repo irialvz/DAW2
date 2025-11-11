@@ -1,7 +1,7 @@
 /* Navbar */
 .logo img {
-  width: 150px;
-  height: 80px;
+  width: 80px;
+  height: 90px;
   background: url(imagenes_originales/logo.png);
   border-radius: 50%;
   
@@ -17,10 +17,19 @@ p{
   font-family: 'Delius',system-ui;
 }
 .btn-cafe {
-  width: 80px;
-  height: 25px;
+  width: 15%;
+  height: 5%;
   background-color: #5c4433;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.btn-cafe a{
+  text-decoration: none;
+  color: white;
+  
 }
 
 /* Hero */
@@ -35,13 +44,49 @@ p{
 
 /* Secciones "Sobre nosotros" */
 .img-placeholder {
-  background-color: #bdbdbd;
-  height: 250px;
+  /* background-color: #bdbdbd; */
+  height: 150px;
+  width: 200px;
+  display: flex;
+  align-items:end;
+  justify-content:end;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.img-placeholder img{
+  /* background-color: #bdbdbd; */
+  height: 100%;
+  width: 100%;
+  margin-right:50px;
+  
+}
+.separadorDecorativo{
+  margin-top:50px;
+}
+.img-separadores {
+  /* background-color: #5c4433; */
+  height: 150px;
+  width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.5rem;
+  margin-left: 5%;
+
+}
+.img-separadores img {
+  height: 100%;
+  width: 100%;
+
+}
+.img-separadores.col{
+  flex: 0 0 auto; /* desactiva el crecimiento automático */
+  width: auto !important; /* fuerza tu ancho */
+
 }
 
 /* Footer */
