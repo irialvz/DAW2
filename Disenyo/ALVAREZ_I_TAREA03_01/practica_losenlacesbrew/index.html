@@ -14,6 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Delius&family=Funnel+Display:wght@300..800&family=Rubik+Bubbles&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -42,13 +44,33 @@
     <section class="hero d-flex align-items-center text-center">
         <div class="container row">
             <div class="col">
-                <h1>Tu pausa diaria,<br> nuestro compromiso con el planeta.</h1>
+                <h1 class="titulo-header">Tu pausa diaria,<br> nuestro compromiso con el planeta.</h1>
                 <p>El sabor del cambio sostenible</p>
                 <div class="btn btn-hero"><a href="#anclaProductos">Descubre más</a></div>
-
             </div>
         </div>
     </section>
+    <!-- marcas -->
+     <section class="marcas">
+        <hr class="hr-marcas">
+        <div class="container py-5">
+            <div class="row text-center ">
+                <h2>Nuestros patrocinadores</h2>
+
+                <div class="col  d-flex justify-content-between align-items-center flex-wrap contenedor-marcas-logos">
+                    <img src="imagenes_exportadas/rightside.png" alt="">
+                    <img src="imagenes_exportadas/LOGO_MORI_sin_leyenda_1.webp" alt="">
+                    <img src="imagenes_exportadas/logo_sin_fondo_1_085de0a5-0bf0-4d92-8a8a-2cc2ed7d5bf9.avif" alt="">
+                    <img src="imagenes_exportadas/5c63b384a1a6f68efebfc55b11fc9aed-green-plantation.png" alt="">
+                    <img src="imagenes_exportadas/Logo-Puchero-2025-2048x300.png" alt="">
+                    <img src="imagenes_exportadas/a1b6839b-b16e-4fc7-88af-b2b40e07ef28.png" alt="">
+
+                </div>                
+            </div>
+
+        </div>
+        <hr class="hr-marcas">
+     </section>
     <!-- SOBRE NOSOTROS (Sección 2) -->
     <section class="sobre-nosotros py-5 bg-light">
         <div class="container">
@@ -71,11 +93,11 @@ Nuestro compromiso es con el sabor auténtico y con un planeta más verde.</p>
     </section>
         <!-- SOBRE NOSOTROS (Sección 1) -->
 
-        <section class="sobre-nosotros py-5">
+        <section class="sobre-nosotros py-5 fondo-claro">
         <div class="container">
             <h1 class="subrayado">NUESTRA MISIÓN</h1>
             <div class="row align-items-center">
-                    <h2><span class="resalto">1 ARBÓL</span> plantado por cada 100 paquetes vendidos</h2>
+                    <h2><span class="resalto">1 ÁRBOL</span> plantado por cada 100 paquetes vendidos</h2>
                     <p>Nuestro café proviene de cooperativas locales que practican la agricultura regenerativa.
                         Todos nuestros envases son compostables, y cada compra ayuda a reforestar bosques.</p>
                 </div>
@@ -83,34 +105,54 @@ Nuestro compromiso es con el sabor auténtico y con un planeta más verde.</p>
             </div>
         </div>
     </section>
-    <section class="productos" id="anclaProductos">
+    <!-- SECCION PRODUCTOS -->
+     <!-- TODO responsive -->
+    <section class="productos " id="anclaProductos">
+        <div class="container py-5 ">
+        <h1>EMPAQUES 100% <span class="resalto">RECICLABLES</span></h1>
+
         <div class="row align-items-center contenedor-tarjetas">
-            <h1>EMPAQUES 100% RECICLABLES</h1>
             <div class="tarjeta col  ">
                 <div class="contenedor-foto">
                     <img src="imagenes_originales/cafe2.png"  alt="">
                 </div>
-                <h2>Montaña Verde</h2>
-                <p>Aroma intenso, cultivado a la sombra.</p>
+                <div class="contenedor-texto">
+                    <h2>Montaña Verde</h2>
+                    <p>Aroma intenso, cultivado a la sombra.</p>                    
+                </div>
+            </div>
+            <div class="tarjeta col ">
+                <div class="contenedor-foto">
+                   <img src="imagenes_originales/cafe1.png"  alt="">
+                </div>
+                <div class="contenedor-texto">
+                    <h2>Clásico Orgánico</h2>
+                    <p>Sabor equilibrado, 100% natural</p>                    
+                </div>
+            </div>
+            <div class="tarjeta col ">
+                <div class="contenedor-foto">
+                    <img src="imagenes_originales/cafe2.png" alt="">
+                </div>
+                <div class="contenedor-texto">
+                    <h2>Despierta Mente</h2>
+                    <p>Mezcla energizante, tu mejor inicio del día.</p>                    
+                </div>
+            </div>
+            <div class="tarjeta col ">
+                <div class="contenedor-foto">
+                    <img src="imagenes_originales/cafe1.png"  alt="">
+                </div>
+                <div class="contenedor-texto">
+                    <h2>Despierta Mente</h2>
+                    <p>Mezcla energizante, tu mejor inicio del día.</p>                    
+                </div>
 
-            </div>
-            <div class="tarjeta col ">
-                <img src="imagenes_originales/cafe1.png"  alt="">
-                <h2>Clásico Orgánico</h2>
-                <p>Sabor equilibrado, 100% natural</p>
-
-            </div>
-            <div class="tarjeta col ">
-                <img src="imagenes_originales/cafe2.png" alt="">
-                <h2>Despierta Mente</h2>
-                <p>Mezcla energizante, tu mejor inicio del día.</p>
-            </div>
-            <div class="tarjeta col ">
-                <img src="imagenes_originales/cafe1.png"  alt="">
-                <h2>Despierta Mente</h2>
-                <p>Mezcla energizante, tu mejor inicio del día.</p>
             </div>
         </div>
+
+        </div>
+
     </section>
 
     <!-- FOOTER -->

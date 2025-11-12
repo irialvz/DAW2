@@ -18,13 +18,43 @@
 - Calcula y muestra el numero de palabras que están escritas en el textarea
 - Muestra la ultima y la primera palabra del textarea
 */
+function pulsar(){
+    let error=false;
+    let texto = document.getElementsByName("mitexto")[0].value;
+    console.log(typeof(texto));
+    let arrayTexto =texto.trim().split(" ");
+    if(arrayTexto.length == 0){
+        error =true;
+        alert("Texto vacio.")
+    }
+    if(!error){ 
+
+        console.log(arrayTexto);
+        let numeroPalabras = arrayTexto.length;
+        let primeraPalabra= arrayTexto[0];
+        let ultimaPalabra = arrayTexto[numeroPalabras-1];
+        document.getElementById("palabras").innerHTML = 
+        "<h1>DIV PALABRAS</h1><p>El numero de palabras introducida es de: "+numeroPalabras+
+            "<br> La primera palabra es: <strong>"+primeraPalabra+"</strong><br> La segunda palabra es: <strong>"+ultimaPalabra+"</strong></p>";
+        calificaciones();
+    }
+
+}
+function calificaciones(){
+    var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
+    let aprobados = 0;
+    notas.forEach((element)=> element >= 5 ? aprobados++ : aprobados);
+    let notasNoRepetidas = new Set(notas);
+    document.getElementById("calificaciones").innerHTML = "<h1>CALIFICACIONES</h1><p>El numero de aprobados es de: <strong>"+aprobados+"</strong>"+
+        "<br>Las notas que no estan repetidas son: "+Array.from(notasNoRepetidas).join(", ")+"</p>";
+}
 
 
 /* Para el div calificaciones: 
 Dado el siguiente array de notas de clase en la 1ª Evaluación. 
 var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
-- Sacar el numero de alumnos aprobados
-- Dado este array, sacar por pantalla todas las notas que no están repetidas
+- Sacar el numero de alumnos aprobados              OK
+- Dado este array, sacar por pantalla todas las notas que no están repetidas        OK
 - Crea una funcion para comprobar las notas que estan por debajo de 5. Llama a esta función para sacar las notas pares de los alumnos que han suspendido
 - Sacar las notas impares de los alumnos que han sacado al menos un 7
 - Elimina del array las notas por debajo de 5

@@ -1,3 +1,6 @@
+.fondo-claro{
+  background: #ece7e7;
+}
 .resalto {
   color: #2D4530;
   font-family:'Rubik Bubbles',system-ui;
@@ -18,22 +21,31 @@
   border-radius: 50%;
   
 }
-h1{
+.titulo-header{
     font-family:'Rubik Bubbles',system-ui;
-    font: 50px;
+    font-size: 50px;
+    letter-spacing: 2px;
+
+}
+h1{
+  font-family: 'Inter Tight',system-ui;
+  font-weight: 900;
+    font: 80px;
 }
 h2{
-  font-family: 'Delius',system-ui;
+  font-family: 'Inter Tight',system-ui;
   font-weight:700;
 }
 p{
-  font-family: 'Delius',system-ui;
-  font-size: 20px;
+  font-family: 'Inter Tight',system-ui;
+  font-weight: 400;
+
+  font-size: 24px;
 }
 .subrayado {
-  text-decoration:underline;
   margin-bottom: 2%;
 }
+
 .btn{
   background-color: #5c4433;
   border-radius: 5px;
@@ -66,7 +78,7 @@ p{
 
 /* Hero */
 .hero {
-  height: 80vh;
+  height: 90vh;
   background-color: #d6d6d6;
   background: url(imagenes_originales/fondo.png);
   background-size: cover;
@@ -76,14 +88,18 @@ p{
 .contenedor-tarjetas{
   display: flex;
   flex-direction: row;
-  margin-left:10%;
-  margin-right:10%;
+  margin-top: 3%;
+
 }
 .tarjeta{
-   height: 395px; 
-   width:25px; 
-    background: #bdbdbd;
+   height: 220px; 
+   width:auto; 
+  background-color: rgba(24, 53, 11, 0.5);
+  backdrop-filter: blur(10px);
+    border: 1px solid rgba(10, 80, 19, 0.4);
+
     margin: 2px;
+    margin-left: 2%;
   border-radius: 15%;
   display: flex;
   flex-direction: column;
@@ -91,17 +107,21 @@ p{
   padding:10px;
 
 }
-.tarjeta img{
+.contenedor-foto img{
   height: 100%;
-  width: 70%;
+  /* width: 80%; */ 
   padding: 20px;
 
+}
+.contenedor-texto {
+  height: 100%;
+  width: auto;
 }
 .tarjeta .contenedor-foto{
   display: flex;
   flex-direction: row;
   height: 50%;
-  width:  auto;
+  width:  100%;
 }
 .productos {
   margin-top: 50px;
@@ -122,7 +142,7 @@ p{
 .img-container {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
 }
 .img-placeholder img{
   /* background-color: #bdbdbd; */
@@ -131,9 +151,7 @@ p{
   margin-right:50px;
   
 }
-.separadorDecorativo{
-  margin-top:50px;
-}
+
 .img-separadores {
   /* background-color: #5c4433; */
   height: 150px;
@@ -155,6 +173,18 @@ p{
 
 }
 
+.contenedor-marcas {
+  width:  auto;
+  
+}
+.contenedor-marcas-logos img{
+  max-height: 120px;
+  width: 210px;
+  margin: 5px;
+  padding-right: 30px;
+
+}
+.hr-marcas { border:5px solid rgb(0, 0, 0);margin: 0px;}
 /* Footer */
 .footer-box {
   background-color: #bdbdbd;
