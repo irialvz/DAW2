@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form name="formulario">
         <textarea name="mitexto" placeholder="Introduce una frase" cols="30" rows="5"></textarea>
@@ -13,59 +15,109 @@
     </form>
     <div id="palabras"></div>
     <div id="calificaciones"></div>
-<script>
-    /* Para el div palabras: 
-- Calcula y muestra el numero de palabras que están escritas en el textarea
-- Muestra la ultima y la primera palabra del textarea
-*/
-function pulsar(){
-    let error=false;
-    let texto = document.getElementsByName("mitexto")[0].value;
-    console.log(typeof(texto));
-    let arrayTexto =texto.trim().split(" ");
-    if(arrayTexto.length == 0){
-        error =true;
-        alert("Texto vacio.")
-    }
-    if(!error){ 
+    <script>
+        /* Para el div palabras: 
+    - Calcula y muestra el numero de palabras que están escritas en el textarea
+    - Muestra la ultima y la primera palabra del textarea
+    */
+        function pulsar() {
+            let error = false;
+            let texto = document.getElementsByName("mitexto")[0].value;
+            console.log(typeof (texto));
+            let arrayTexto = texto.trim().split(" ");
+            if (arrayTexto.length == 0) {
+                error = true;
+                alert("Texto vacio.")
+            }
+            if (!error) {
+                console.log(arrayTexto);
+                let numeroPalabras = arrayTexto.length;
+                let primeraPalabra = arrayTexto[0];
+                let ultimaPalabra = arrayTexto[numeroPalabras - 1];
+                document.getElementById("palabras").innerHTML =
+                    "<h1>DIV PALABRAS</h1><p>El numero de palabras introducida es de: " + numeroPalabras +
+                    "<br> La primera palabra es: <strong>" + primeraPalabra + "</strong><br> La segunda palabra es: <strong>" + ultimaPalabra + "</strong></p>";
+                calificaciones();
+            }
 
-        console.log(arrayTexto);
-        let numeroPalabras = arrayTexto.length;
-        let primeraPalabra= arrayTexto[0];
-        let ultimaPalabra = arrayTexto[numeroPalabras-1];
-        document.getElementById("palabras").innerHTML = 
-        "<h1>DIV PALABRAS</h1><p>El numero de palabras introducida es de: "+numeroPalabras+
-            "<br> La primera palabra es: <strong>"+primeraPalabra+"</strong><br> La segunda palabra es: <strong>"+ultimaPalabra+"</strong></p>";
-        calificaciones();
-    }
+        }
 
-}
-function calificaciones(){
-    var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
-    let aprobados = 0;
-    notas.forEach((element)=> element >= 5 ? aprobados++ : aprobados);
-    let notasNoRepetidas = new Set(notas);
-    document.getElementById("calificaciones").innerHTML = "<h1>CALIFICACIONES</h1><p>El numero de aprobados es de: <strong>"+aprobados+"</strong>"+
-        "<br>Las notas que no estan repetidas son: "+Array.from(notasNoRepetidas).join(", ")+"</p>";
-}
+        function calificacionSuspensa(nota) {
+            return (nota < 5 ? true : false);
+        }
+        function calculoAleatorio() {
+            return Math.floor(Math.random() * (10 - 5) + 5)
+        }
+        function rellenarArray(notas) {
+            for (let i = 0; i < 5; i++) {
+                notas.push(calculoAleatorio());
+            }
+            return notas;
+        }
+
+        function calificaciones() {
+            var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8, 7.5, 1, 7.5, 8);
+            let aprobados = 0;
+            notas.forEach((element) => element >= 5 ? aprobados++ : aprobados);
+            let notasNoRepetidas = new Set(notas);
+            let notasParesSuspensas = new Array;
+            notas.forEach((element) => {
+                if (element % 2 == 0) {
+                    let comprobacion = calificacionSuspensa(element);
+                    if (comprobacion) {
+                        notasParesSuspensas.push(element);
+                    }
+                }
+            });
+            let notasImpares = new Set;
+            notas.forEach((element) => {
+                if (element % 2 != 0) {
+                    if (element >= 7) {
+                        notasImpares.add(element);
+                    }
+                }
+            });
+            document.getElementById("calificaciones").innerHTML = "<h1>CALIFICACIONES</h1><p>El numero de aprobados es de: <strong>" + aprobados + "</strong>" +
+                "<br></p>";
+            document.getElementById("calificaciones").innerHTML += "<p>Las notas que no estan repetidas son: " + Array.from(notasNoRepetidas).join(", ") + "</p>";
+            document.getElementById("calificaciones").innerHTML += "<p>Las notas pares por debajo de 5 : " + notasParesSuspensas.join(", ") + "</p>";
+            document.getElementById("calificaciones").innerHTML += "<p>Las notas impares por encima de 7: " + Array.from(notasImpares).join(", ") + "</p>";
+            document.getElementById("calificaciones").innerHTML += "<p>El array de notas antes del eliminar los suspensos: " + notas.join(", ") + "</p>";
+            notas.forEach((element) => {
+                if (calificacionSuspensa(element)) {
+                    notas.splice(notas.indexOf(element), 1);
+                }
+            });
+            document.getElementById("calificaciones").innerHTML += "<p>El array de notas despues del eliminar los suspensos: " + notas.join(", ") + "</p>";
+            notas = rellenarArray(notas);
+            document.getElementById("calificaciones").innerHTML += "<p>El array de notas despues de implementar aleatorios: " + notas.join(", ") + "</p>";
+            let notasOrdenadas = notas.sort(function (a, b) {
+                return b - a;
+            });
+            document.getElementById("calificaciones").innerHTML += "<p>El array de notas ordenado: " + notasOrdenadas.join(", ") + "</p>";
 
 
-/* Para el div calificaciones: 
-Dado el siguiente array de notas de clase en la 1ª Evaluación. 
-var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
-- Sacar el numero de alumnos aprobados              OK
-- Dado este array, sacar por pantalla todas las notas que no están repetidas        OK
-- Crea una funcion para comprobar las notas que estan por debajo de 5. Llama a esta función para sacar las notas pares de los alumnos que han suspendido
-- Sacar las notas impares de los alumnos que han sacado al menos un 7
-- Elimina del array las notas por debajo de 5
-- Crea una función aleatoria que calcule numeros entre 5 y 10 sin decimales
-- Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas. 
-- Muestra por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
-
-NOTA1: Emplea siempre que se pueda metodos y propiedades del objeto Array
-NOTA2: Emplea if, for, for-in, for-of, do-while, while... */
+        }
 
 
-</script>
+
+        /* Para el div calificaciones:
+        Dado el siguiente array de notas de clase en la 1ª Evaluación. 
+        var notas = new Array(4.5, 4, 6, 1, 7.5, 10, 5.25, 4.5, 2, 1, 8,7.5, 1, 7.5, 8);
+        - Sacar el numero de alumnos aprobados              OK
+        - Dado este array, sacar por pantalla todas las notas que no están repetidas        OK
+        - Crea una funcion para comprobar las notas que estan por debajo de 5. Llama a esta función para sacar las notas pares de los alumnos que han suspendido OK
+        - Sacar las notas impares de los alumnos que han sacado al menos un 7   OK
+        - Elimina del array las notas por debajo de 5   OK
+        - Crea una función aleatoria que calcule numeros entre 5 y 10 sin decimales
+        - Llama a esta funcion aleatoria para rellenar el array, respetando las notas que no han sido eliminadas. 
+        - Muestra por pantalla el array con los nuevos elementos ordenandos de mayor a menor.
+        
+        NOTA1: Emplea siempre que se pueda metodos y propiedades del objeto Array
+        NOTA2: Emplea if, for, for-in, for-of, do-while, while... */
+
+
+    </script>
 </body>
+
 </html>
