@@ -6,14 +6,16 @@
  * @author manuel
  */
 class OperacionRacional extends Operacion {
-    private Racional $racional1;
-    private Racional $racional2;
+
     public function __construct( $operacion) {
         parent::__construct($operacion);
-        $primerOperando = explode("/", $this->getOp1());
-        $segundoOperando = explode("/", $this->getOp2());
-        $this->racional1 = new Racional($primerOperando[0],$primerOperando[1]);
-        $this->racional2 = new Racional($segundoOperando[0],$segundoOperando[1]);
+        $operador = preg_replace('/[0-9\/]/','',$operacion);
+        $operandos = explode($operador,$operacion);
+        $r1 = explode('/',$operandos[0]);
+        $r2 = explode('/',$operandos[1]);
+        var_dump($operandos);
+        $this->op1 = new Racional(intval($r1[0]),intval($r1[1]));
+        $this->op2 = new Racional(intval($r2[0]),intval($r2[1]));
 
 
     }
@@ -21,23 +23,23 @@ class OperacionRacional extends Operacion {
     /**
      * Este método realiza el cálculo de una operación Racional
      */
-    public function opera() {
+    public function opera():String{
         $resultadoOperacion=0;
         switch ($this->getOperador()){
             case '+':{
-                $resultadoOperacion = $this->racional1->sumar($this->racional2);
+                $resultadoOperacion = $this->op1->sumar($this->op2);
                 break;
             }
             case '-':{
-                $resultadoOperacion = $this->racional1->restar($this->racional2);
+                $resultadoOperacion = $this->op1->restar($this->op2);
                 break;
             }
             case '*':{
-                $resultadoOperacion = $this->racional1->multiplicar($this->racional2);
+                $resultadoOperacion = $this->op1->multiplicar($this->op2);
                 break;
             }
             case ':':{
-                $resultadoOperacion = $this->racional1->dividir($this->racional2);
+                $resultadoOperacion = $this->op1->dividir($this->op2);
                 break;
             }
         }
@@ -49,7 +51,7 @@ class OperacionRacional extends Operacion {
      */
     public function __toString() {
         $resultado = parent::__toString();
-        $resultado.= $this->opera();
+        $resultado .= $this->opera();
         return $resultado;
 
     }
@@ -58,9 +60,8 @@ class OperacionRacional extends Operacion {
      * @return string retornará la información de toda la operación
      * En el ejemplo de ejecución lo puedes ver en forma de tabla después de ejecutarla
      */
-    public function describe() {
+    public function describe():string {
         $operacion = parent::describe();
-        //Agrega la informacion de describe para este caso
         return $operacion;
     }
 

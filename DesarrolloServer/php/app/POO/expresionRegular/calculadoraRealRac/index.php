@@ -20,6 +20,7 @@ if (isset($_POST['enviar'])) {
             $descripcion = $operacion->describe();
             break;
         case Operacion::ERROR:
+            $operacion = "";
             $operacionNum = NULL;
             $descripcion = "La operación <span class='destacado'>$operacionCadena</span> no es una operación válida</label>";
             break;

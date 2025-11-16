@@ -27,7 +27,10 @@ abstract class Operacion {
 
         /**RACIONAL**/
         $racional = "/^$numRacional$opRacional$numRacional$/";
-        if (preg_match($racional, $operacion))
+        $racionalEntero = "/^$numRacional$opRacional$numEntero/";
+        $enteroRacional = "/^$numEntero$opRacional$numRacional/";
+
+        if (preg_match($racional, $operacion)||preg_match($racionalEntero,$operacion)||preg_match($enteroRacional,$operacion))
             self::$tipo = Operacion::RACIONAL;
 
         return self::$tipo;
@@ -46,16 +49,18 @@ abstract class Operacion {
      * Este método os lo paso implementado
      * */
     private function obtenerOperador($operacion):String {
+        $operador="";
         if (strpos($operacion ,'+')!==false)
-            return '+';
+            $operador= '+';
         if (strpos($operacion ,'-')!==false)
-            return '-';
+            $operador= '-';
         if (strpos($operacion ,'*')!==false)
-            return '*';
+            $operador= '*';
         if (strpos($operacion ,':')!==false)
-            return ':';
-        if (strpos($operacion ,'/')!==false)
-            return '/';
+            $operador= ':';
+        if (strpos($operacion ,'/')!==false && self::$tipo!==self::RACIONAL)
+            $operador= '/';
+        return $operador;
     }
 
     public function getOp1() {
@@ -78,7 +83,7 @@ abstract class Operacion {
         return "<br />$this->op1$this->operador$this->op2 = ";
     }
 
-    public function describe() {
+    public function describe():string {
         $operacion = "<table border=1><tr><th>Concepto</th> <th>Valores</th></tr>";
         $operacion .= "<tr><td>Operando 1</td><td>$this->op1</td></tr>";
         $operacion.="<tr><td>Operando 2</td><td>$this->op2</td></tr>";

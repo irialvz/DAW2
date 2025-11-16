@@ -16,9 +16,8 @@ class Racional {
          //opciones new Racional ("5/2") =>5/2
          //opciones new Racional ("5") =>5/1
      */
-    public function __construct(int|string $num=1, $den=1) {
+    public function __construct($num=1, $den=1) {
         if (is_string($num) ) {
-
             $valores = explode("/", $num);
             $this->num = $valores[0];
             if (count($valores) ==2) {
@@ -29,6 +28,7 @@ class Racional {
         }else {
             $this->num = $num;
             $this->den = $den;
+            var_dump($this->den);
         }
     }
 
@@ -84,7 +84,7 @@ class Racional {
      * @source simplifica el Racional actual, retornando otro objeto Racional con esos valores como num y den
      * importante: no modifica el Racional actual
      */
-    public function simplificar()
+    public function simplificar():Racional
     {
         $mcd = $this->mcd($this->num,$this->den);
         return new Racional ($this->num/$mcd, $this->den/$mcd);
