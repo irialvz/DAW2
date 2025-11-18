@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="miFormulario">
+    <label>salario bruto:
+        <textarea name="salarioBruto" id="salarioBruto"></textarea>
+    </label>
+    <label>retencion:
+        <textarea name="retencion" id="retencion"></textarea>
+    </label>
+    <label>numero pagas:
+        <textarea name="pagas" id="pagas"></textarea>
+    </label>
+    <button type="submit">Introducir</button>
+</form>
+
+<p id="demo"></p>
+    
+</body>
+<script>
+    document.getElementById("miFormulario").addEventListener("submit", function(event){
+        event.preventDefault();   
+
+        let error = false;
+        let salarioBruto = Number(document.getElementById("salarioBruto").value);
+        let retencion = Number(document.getElementById("retencion").value);
+        let pagas = Number(document.getElementById("pagas").value);
+
+        if (isNaN(salarioBruto) || isNaN(retencion) || isNaN(pagas)){
+            error = true;
+            alert("Debes introducir caracteres numericos");
+        }
+
+        if (!error){
+            let resultado = calculoNomina(salarioBruto, retencion, pagas);
+            document.getElementById("demo").innerHTML = resultado;
+        }
+    });
+
+    function calculoNomina(salarioBruto, retencion, pagas){
+        return salarioBruto * (1 - (retencion / 100)) / pagas;
+    }
+</script>
+</html>

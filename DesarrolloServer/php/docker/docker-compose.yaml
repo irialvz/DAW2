@@ -18,6 +18,7 @@ services:
       - MYSQL_DATABASE=alumnos
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./composer:/user/bin
   phpadmin:
     image: phpmyadmin
     ports:

@@ -32,7 +32,10 @@ abstract class Operacion {
 
         if (preg_match($racional, $operacion)||preg_match($racionalEntero,$operacion)||preg_match($enteroRacional,$operacion))
             self::$tipo = Operacion::RACIONAL;
-
+        $realRacional = "/^$numReal$opRacional$numRacional/";
+        $racionalReal = "/^$numRacional$opRacional$numReal/";
+        if (preg_match($realRacional, $operacion)||preg_match($racionalReal,$operacion))
+            self::$tipo = Operacion::ERROR;
         return self::$tipo;
 
     }
