@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="miFormulario">
+        <label>Telefono<textarea name="telefono"></textarea></label>
+        <br><button type="submit">Introducir</button>
+    </form>
+    <p id="salida"></p>
+
+</body>
+<script>
+    document.getElementById("miFormulario").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let error = false;
+        let textArea = document.getElementsByName("telefono")[0].value;
+        if (!error) {
+            let valida = validarTelefono(textArea);
+        }
+
+
+    });
+    /*
+       -          Empezará siempre por 8 o 9
+
+-          Deberá contener 9 números
+
+-          Ninguna negativo
+
+-          No puede coincidir que haya dos ceros en la segunda y tercera posición
+    
+    */
+    function validarTelefono() {
+        let introducido = arguments[0];
+        let telefonos = introducido.split(",");
+
+        for (let i = 0; i < telefonos.length; i++) {
+           let telefono = Number(telefonos[i]);
+           if (isNaN(telefono)){
+            document.getElementById("salida").innerHTML += telefono +" es invalido porque deben ser todo numeros.<br>";
+            continue;
+           }
+           if (String(telefono).length !== 9){
+            document.getElementById("salida").innerHTML += telefono +" es invalido porque debe tener longitud 9.<br>";
+            continue;
+           }
+           let primerCaracter = String(telefono).charAt(0);
+           if (primerCaracter != '8' && primerCaracter!='9'){
+            document.getElementById("salida").innerHTML += telefono +" es invalido porque debe empezar por 8 o por 9.<br>";
+            continue;
+           }
+           let segundoCaracter = String(telefono).charAt(1);
+           let tercerCaracter = String(telefono).charAt(2);
+           if(segundoCaracter == '0' && tercerCaracter == '0'){
+            document.getElementById("salida").innerHTML += telefono +" es invalido porque no puede coincidir que haya dos ceros en la segunda y tercera posición.<br>";
+            continue;
+           }
+
+
+        document.getElementById("salida").innerHTML += telefono +" es valida.<br>";
+
+        }
+
+    }
+</script>
+
+</html>

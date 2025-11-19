@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form id="miFormulario">
         <label>Matricula del alumno<textarea name="matriculaAlumno"></textarea></label>
         <br><button type="submit">Introducir</button>
     </form>
     <p id="salida"></p>
-    
+
 </body>
 <script>
-    document.getElementById("miFormulario").addEventListener("submit",function(event){
+    document.getElementById("miFormulario").addEventListener("submit", function (event) {
         event.preventDefault();
-        let error=false;
-        let matriculaIntroducida = document.getElementsByName("matriculaAlumno").value;
-
-        if (!error){
-
+        let error = false;
+        let matriculaIntroducida = document.getElementsByName("matriculaAlumno")[0].value;
+        console.log(matriculaIntroducida);
+        if (!error) {
             let valida = validarMatricula(matriculaIntroducida);
-            if (valida){
-                document.getElementById("salida").innerHTML = "La matricula esta correcta";
-            }else{
-                document.getElementById("salida").innerHTML = "La matricula no esta correcta";
-
-            }
-
         }
 
 
@@ -39,18 +33,36 @@
         - letra == P || letra == S
     
     */
-    function validarMatricula(){
+    function validarMatricula() {
         let introducido = arguments[0];
         let matriculas = introducido.split(",");
-        console.log(matriculas);
-            for (let i=0;i<arguments.length;i++){
-                console.log(matriculas[i].length);
-                if (matriculas[i].length != 6) return false;
-                if (matriculas[i][0] %2 === 0) return false;
-                if (matriculas[matriculas.length-1] !== 'P' && matriculas[matriculas.length-1] !== 'S' )return false;
+
+        for (let i = 0; i < matriculas.length; i++) {
+            let mat = String(matriculas[i].trim());
+            let numeros = mat.substring(0,5);
+            let caracter = mat.charAt(5);
+            if (isNaN(numeros)){
+                document.getElementById("salida").innerHTML += matriculas[i] +" es invalida porque no tiene 5 numeros.<br>";
+                continue;
+                
             }
-            
-        return true;
+            if (matriculas[i].length != 6 ) {
+                document.getElementById("salida").innerHTML += matriculas[i] +" es invalida porque no tiene longitud 6.<br>";
+                continue;
+            }
+            if (Number(numeros.charAt(0)) % 2 === 0){
+                document.getElementById("salida").innerHTML += matriculas[i] +" es invalida porque el primer digito no es impar.<br>";
+                continue;
+            }
+            if ( caracter !== 'P' && caracter !== 'S'){
+                document.getElementById("salida").innerHTML += matriculas[i] +" es invalida porque la letra no es P ni S.<br>";
+                continue;
+            }
+        document.getElementById("salida").innerHTML += matriculas[i] +" es valida.<br>";
+
+        }
+
     }
 </script>
+
 </html>
