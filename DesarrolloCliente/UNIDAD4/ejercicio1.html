@@ -40,9 +40,8 @@
     
     */
     function validarMatricula(){
-        console.log(toString(arguments));
-
-        let matriculas = String(arguments).split(",");
+        let introducido = arguments[0];
+        let matriculas = introducido.split(",");
         console.log(matriculas);
             for (let i=0;i<arguments.length;i++){
                 console.log(matriculas[i].length);
