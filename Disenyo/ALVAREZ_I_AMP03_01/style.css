@@ -1,0 +1,100 @@
+body{
+    margin: 5%;
+}
+/* div {
+    overflow: hidden;
+} */
+/*EJERCICIO 1*/
+.rectangulo {
+    height: 350px;
+    width: 450px;
+    background: red;
+    
+}
+.rectangulo:hover {
+    transform: scale(0.5);
+    filter:invert();
+    
+}
+/*EJERCICIO 2*/
+.ejercicio2{
+    display: flex;
+    flex-direction: row;
+    
+}
+.cuadrado {
+    height: 40px;
+    width: 40px;
+    background: green;
+    margin: 20px;
+}
+.cuadrado:hover {
+    transform: scaleX(2);
+    background:purple;
+}
+/*EJERCICIO 3*/
+
+.elemento{
+    position: relative;
+    height: 80px;
+    width: 80px;
+
+    animation: elemento 5s linear 2s forwards;
+}
+
+@keyframes elemento {
+    0% {
+        background: rgb(234, 0, 255);
+        top: 0;
+        left: 0;
+    }
+    20% { 
+        background: orange;
+        left: 200px;
+        top: 0;
+    }
+    50% { 
+        background: cadetblue;
+        left: 200px;
+        top:200px
+    }
+    80% {
+        background-color: brown;
+        left: 0;
+        top:200px;
+    }
+    100% { 
+        background: magenta;
+        left: 0;
+        top:0;
+    }
+    
+}
+/*EJERCICIO4*/
+.circulo {
+    animation: color 2s  infinite;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background: green;
+
+}
+@keyframes color {
+    0% {
+        background: radial-gradient(circle,rgba(45, 69, 48, 1) 60%, rgba(45, 150, 56, 1) 88%);
+        
+    }
+    20% {
+        background: radial-gradient(circle,rgb(45, 69, 64) 55%, rgb(85, 168, 161) 82%);
+    }
+    50%{
+        background-color: radial-gradient(circle,rgb(45, 45, 69) 55%, rgb(99, 92, 182) 82%);
+    }
+    80%{
+        background: radial-gradient(circle,rgb(62, 45, 69) 60%, rgb(134, 62, 194) 88%);
+    }
+    100%{
+        background: radial-gradient(circle,rgb(90, 59, 90) 60%, rgb(161, 59, 131) 88%);
+    }
+    
+}
