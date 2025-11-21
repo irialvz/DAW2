@@ -1,10 +1,5 @@
 <?php
-use \controladores\admin\A;
-use \controladores\servicios\A as serviciosA;
-
-
 $a = new A();
-$a = new serviciosA();
 $b = new B();
 $c = new C();
 $d = new D();
