@@ -1,7 +1,7 @@
 <?php
 
-namespace servicios;
-class D
+namespace controladores\servicios;
+class A
 {
     public function __toString()
     {

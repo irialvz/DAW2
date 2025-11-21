@@ -1,5 +1,6 @@
 <?php
-
+namespace controladores\admin;
+//no tiene porque ser el namespaces igual que las carpetas del proyecto
 class A
 {
     public function __toString(){
