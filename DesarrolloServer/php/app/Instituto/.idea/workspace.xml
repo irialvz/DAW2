@@ -47,7 +47,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Rebasing main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "/media/alumno/DatosD1/Iria_DawD/DAW2/DesarrolloServer/php/docker",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -73,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763627496410</updated>
       <workItem from="1763627497533" duration="2230000" />
-      <workItem from="1763711135644" duration="7523000" />
+      <workItem from="1763711135644" duration="7524000" />
     </task>
     <servers />
   </component>
