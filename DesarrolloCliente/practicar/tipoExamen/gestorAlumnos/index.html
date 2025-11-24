@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gestor de Notas</title>
+<style>
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align:center; }
+  .alta { background-color: #c8f7c5; }
+  .baja { background-color: #f7c5c5; }
+</style>
+</head>
+<body>
+<h2>Gestor de Notas</h2>
+<form id="formAddEstudiante">
+  <input type="text" id="nombreEstudiante" placeholder="Nombre del estudiante" required>
+  <button type="submit">Añadir estudiante</button>
+</form>
+
+<table id="tablaEstudiantes">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Promedio</th>
+      <th># Notas</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Filas generadas por JS -->
+  </tbody>
+  <script></script>
+</table>
+</body>
+</html>

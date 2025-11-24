@@ -1,0 +1,48 @@
+<!-- Ejercicio: Defina una función flecha y empleando el operador Spread realice las siguientes acciones, independientemente del número de parámetros recibidos: 
+
+- Muestre con la consola el número total de parámetros recibidos. 
+
+- En el caso de recibir más de 2 parámetros, intercambiar los valores del primer y tercer parámetro, mostrando los valores del antes y del después en la consola.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="miFormulario">
+        <label>Nombre: <textarea name="nombre" id=""></textarea></label>
+        <label>Edad: <input type="number" name="edad" id=""></input></label>
+        <label>Oficio: <textarea name="oficio" id=""></textarea></label>
+        <button type="submit" onclick="pulsar()">Enviar</button>
+    </form>
+    
+</body>
+<script>
+    function pulsar(){
+        document.getElementById("miFormulario").addEventListener("submit",function (event){
+            event.preventDefault();
+            let error = () => alert("Operacion invalida");
+            const nombre = document.getElementsByName("nombre")[0].value;
+            let edad = document.getElementsByName("edad")[0].value;
+            let oficio = document.getElementsByName("oficio")[0].value;
+            if (typeof(nombre) != "string" || typeof(oficio) !="string" || isNaN(edad)){
+                error();
+            }
+            const flecha = (...parametros) => {
+                let longitud = parametros.length;
+                console.log("El numero de parametros es de: "+ longitud);
+                if(longitud > 2){
+                    console.log("Antes: "+parametros.toString());
+                    [parametros[0],parametros[2]] = [parametros[2],parametros[0]];
+                    console.log("Despues: "+parametros.toString());
+                }
+            }
+            flecha(nombre,oficio,edad);
+
+        });
+
+    }
+</script>
+</html>

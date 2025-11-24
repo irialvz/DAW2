@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="miFormulario">
+        <label>Edad: <input type="number" name="" id="edad"></label>
+        <label>Ingresos: <input type="number" name="" id="ingresos"></label>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="imprimir"></p>
+    
+</body>
+<script>
+    document.getElementById("miFormulario").addEventListener("submit",function (event){
+        event.preventDefault();
+        let edad = Number(document.getElementById("edad").value);
+        let ingresos = Number(document.getElementById("ingresos").value);
+        let salida = calcularImpuestos(edad,ingresos);
+        document.getElementById("imprimir").innerHTML = salida;
+    });
+    function calcularImpuestos(edad,ingresos){
+        if(edad < 0 || ingresos < 0){
+            alert("input invalido");
+        }
+        if (edad >= 18 && ingresos >= 1000){
+            return (ingresos*40)/100;
+        }
+        return 0;
+    }
+
+
+
+</script>
+</html>

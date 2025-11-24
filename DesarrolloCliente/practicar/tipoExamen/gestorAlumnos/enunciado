@@ -1,0 +1,37 @@
+Enunciado: Gestor de Notas de Estudiantes
+
+Realiza una aplicación web usando JavaScript puro que permita:
+
+Crear un array de estudiantes. Cada estudiante es un objeto definido por el usuario Estudiante con:
+
+id (único)
+
+nombre (string)
+
+notas (array de números, cada nota 0–10)
+
+Mostrar los estudiantes en una tabla con columnas:
+
+Nombre
+
+Promedio de notas
+
+Número de notas
+
+Acciones (añadir nota, borrar estudiante)
+
+Permitir:
+
+Añadir un estudiante con un formulario (nombre obligatorio).
+
+Añadir nota a un estudiante (prompt o input dentro de la fila).
+
+Borrar estudiante.
+
+Calcular el promedio de notas usando una función.
+
+Pintar la tabla automáticamente cada vez que se añada nota o estudiante.
+
+Usar al menos un objeto predefinido de JavaScript (Date) para mostrar la fecha de registro del estudiante o de la última nota.
+
+Usar bucles y condicionales para recorrer arrays y decidir si un estudiante tiene notas o no (p. ej., mostrar “Sin notas” si el array está vacío).

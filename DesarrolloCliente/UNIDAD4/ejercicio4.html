@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenedor {
+            display: flex;
+            justify-self: center;
+            flex-direction: column;
+        }
+
+        .contenedorFormulario {
+            /* background: wheat; */
+            width: 50vh;
+            display: flex;
+            justify-self: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        .botonesFila {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+        <h3>Inicio sesion cajero</h3>
+        <div class="contenedorFormulario">
+            <form id="formulario">
+                <label for="">Nombre: <textarea name="" id="nombre"></textarea></label>
+                <label for="">Contraseña: <input type="password" id="contrasena"></input></label>
+                <button type="submit">Validar</button>
+                <div class="botonesFila">
+                    <div id="Saldo"></div>
+                    <div id="SacarDinero">
+                        <input type="number" name="" id="cantidad" disabled>
+                        <button id="aceptar" disabled>Aceptar</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="demo"></div>
+
+
+    </div>
+
+    <script>
+        document.getElementById("formulario").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let nombre = document.getElementById("nombre").value;
+            let contrasena = document.getElementById("contrasena").value;
+            validarCredenciales(nombre, contrasena);
+
+        });
+        let saldo = 10000;
+
+        //validar credenciales
+        function validarCredenciales(nombre, contrasena) {
+            if (nombre === contrasena) {
+                document.getElementById("aceptar").disabled = false;
+                document.getElementById("cantidad").disabled = false;
+
+                document.getElementById("Saldo").innerHTML = '<button id="botonSaldo">Saldo</button>';
+                document.getElementById("botonSaldo").addEventListener('click', mostrarSaldo);
+
+                // Evento de sacar dinero
+                document.getElementById("aceptar").addEventListener('click', procesarSacarDinero);
+            } else {
+                alert(error());
+                location.reload();
+            }
+        }
+        //funcion mostrar saldo
+        let mostrarSaldo = () => { document.getElementById("demo").innerHTML = `el saldo disponible es de ${saldo} euros` };
+       
+        //funcion sacar dinero
+        function procesarSacarDinero() {
+            const cantidad = parseFloat(document.getElementById("cantidad").value);
+            if (cantidad > saldo) {
+                alert("No tienes suficiente saldo");
+                return;
+            }
+            saldo -= cantidad;
+            mostrarSaldo();
+            document.getElementById("cantidad").value = '';
+        }
+
+        let error = () => "Error,credenciales incorrectas";
+
+
+
+
+    </script>
+</body>
+
+</html>

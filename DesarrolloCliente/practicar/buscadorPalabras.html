@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label for="">Palabras <textarea name="" id="palabras"></textarea></label>
+        <button type="submit"></button>
+    </form>
+    <p id="imprimir"></p>
+
+</body>
+<script>
+    document.getElementById("formulario").addEventListener("submit", function (event) {
+        event.preventDefault();
+        let palabras = String(document.getElementById("palabras").value);
+        let arrayS = terminadasConS(palabras);
+        let arrayA = empiezaPorA(palabras);
+        document.getElementById("imprimir").innerHTML = `Palabras introducidas: ${palabras}`;
+        document.getElementById("imprimir").innerHTML += `<br> Palabras introducidas finalizadas en s: ${arrayS}`;
+        document.getElementById("imprimir").innerHTML += `<br> Palabras introducidas inciadas en a: ${arrayA}`;
+        document.getElementById("imprimir").innerHTML += `<br> Numero de asteriscos en el texto: ${contieneAsterisco(palabras)}`;
+
+
+    });
+    function terminadasConS() {
+        let palabrasString = arguments[0];
+        let arrayPalabra = palabrasString.split(",");
+        let terminadosS = new Array();
+        for (const palabra of arrayPalabra) {
+            if (String(palabra).endsWith('s')) {
+                terminadosS.push(palabra);
+            }
+        }
+        return terminadosS;
+
+    }
+    function empiezaPorA() {
+        let palabrasString = arguments[0];
+        let arrayPalabra = palabrasString.split(",");
+        let empiezanA = new Array();
+        for (const palabra of arrayPalabra) {
+            if (String(palabra).startsWith('a')) {
+                empiezanA.push(palabra);
+            }
+        }
+        return empiezanA;
+    }
+    function contieneAsterisco(){
+        let palabrasString = arguments[0];
+        let arrayPalabra = palabrasString.split(",");
+        let numAsteriscos = 0;
+        for (const palabra of arrayPalabra) {
+            if (String(palabra) == '*') {
+                numAsteriscos++;
+            }
+        }
+        return numAsteriscos;
+    }
+</script>
+
+</html>

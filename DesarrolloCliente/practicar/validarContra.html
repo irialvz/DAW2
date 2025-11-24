@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <label>Contraseña <textarea name="" id="contrasena"></textarea></label>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="imprimir"></p>
+<script>
+    function contrasenaValida(contrasena) {
+        if (typeof (contrasena) != "string") {
+            return false;
+        }
+        if (contrasena != "2Fj(jjbFsuj)" && contrasena != "eoZiugBf&g9") {
+            return false;
+        }
+        return true;
+    }
+    function pulsar() {
+        document.getElementById("formulario").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let contrasena = document.getElementById("contrasena").value;
+
+            let salida = contrasenaValida(contrasena) ? "La contraseña es valida" : "La contraseña no es valida";
+            document.getElementById("imprimir").innerHTML = salida;
+        });
+
+    }
+
+    // Call the pulsar function to attach the event listener
+    pulsar();
+
+</script>
+</body>
+</html>
