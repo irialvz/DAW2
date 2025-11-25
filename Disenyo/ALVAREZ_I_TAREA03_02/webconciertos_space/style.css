@@ -1,0 +1,312 @@
+.fondo-claro{
+  background: #ece7e7;
+}
+.resalto {
+  color: #2D4530;
+  font-family:'Rubik Bubbles',system-ui;
+  font-size:40px;
+}
+/* NAVBAR FLOTANTE */
+.navbar {
+    position: fixed;        /* flotante */
+    top: 20px;              /* separación desde arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    padding: 12px 25px;
+    background: rgba(0, 0, 0, 0.15); /* transparente */
+    backdrop-filter: blur(10px);           /* efecto vidrio */
+    border-radius: 20px;    /* esquinas redondeadas */
+    z-index: 9999;          /* por encima del hero y del video */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* borde suave */
+}
+
+/* Contenedor interno */
+.nav-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    /* 1fr = izquierda y derecha, auto = contenido del medio */
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* Logo */
+.logo {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+.nav-btn {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #000;
+}
+/*FIN DEL NAVBAR*/
+.titulo-header{
+    font-family:'Rubik Bubbles',system-ui;
+    font-size: 50px;
+    letter-spacing: 2px;
+
+}
+h1{
+  font-family: 'Inter Tight',system-ui;
+  font-weight: 900;
+    font: 80px;
+}
+h2{
+  font-family: 'Inter Tight',system-ui;
+  font-weight:700;
+}
+p{
+  font-family: 'Inter Tight',system-ui;
+  font-weight: 400;
+
+  font-size: 24px;
+}
+.subrayado {
+  margin-bottom: 2%;
+}
+
+.btn{
+  background-color: #5c4433;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btn:hover{
+    background-color: #35261a;
+
+}
+.btn a{
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-family: 'Delius',system-ui;
+
+}
+.btn-cafe {
+  width: 15%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.btn-hero{
+  width: 15%;
+  /* height: 5%; */
+  
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    
+}
+.bg-video {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+
+}
+
+.contenedor-tarjetas{
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+
+}
+.tarjeta {
+  width: 300px;
+  height: 350px;
+  background-color: rgba(24, 53, 11, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(10, 80, 19, 0.4);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  overflow: hidden; /* evita que algo se salga */
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+/* Imagen: ocupa el 60% del alto de la tarjeta */
+.contenedor-foto {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-foto img {
+  max-width: 80%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/* Texto: ocupa el 40% restante */
+.contenedor-texto {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenedor-texto h2 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.contenedor-texto p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 💻 Responsividad */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 250px;
+    height: 300px;
+  }
+
+  .contenedor-texto h2 {
+    font-size: 1.1rem;
+  }
+
+  .contenedor-texto p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    width: 200px;
+    height: 260px;
+  }
+
+  .contenedor-texto h2 {
+    font-size: 1rem;
+  }
+
+  .contenedor-texto p {
+    font-size: 0.85rem;
+  }
+}
+
+.productos {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+/* Secciones "Sobre nosotros" */
+.img-placeholder {
+  /* background-color: #bdbdbd; */
+  height: 150px;
+  width: 200px;
+  display: flex;
+  align-items:end;
+  justify-content:end;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.img-placeholder img{
+  /* background-color: #bdbdbd; */
+  height: 100%;
+  width: 100%;
+  margin-right:50px;
+  
+}
+
+.img-separadores {
+  /* background-color: #5c4433; */
+  height: 150px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5%;
+
+}
+.img-separadores img {
+  height: 100%;
+  width: 100%;
+
+}
+.img-separadores.col{
+  flex: 0 0 auto; /* desactiva el crecimiento automático */
+  width: auto !important; /* fuerza tu ancho */
+
+}
+
+.contenedor-marcas {
+  width:  auto;
+  
+}
+.contenedor-marcas-logos img{
+  max-height: 120px;
+  width: 210px;
+  margin: 5px;
+  padding-right: 30px;
+
+}
+.hr-marcas { border:5px solid rgb(0, 0, 0);margin: 0px;}
+.hr-tarjeta { border:3px solid rgb(0, 0, 0);margin-bottom: 5px;}
+/* Footer */
+.footer-box {
+  background-color: #bdbdbd;
+  height: 60px;
+}
