@@ -1,11 +1,6 @@
 .fondo-claro{
   background: #ece7e7;
 }
-.resalto {
-  color: #2D4530;
-  font-family:'Rubik Bubbles',system-ui;
-  font-size:40px;
-}
 /* NAVBAR FLOTANTE */
 .navbar {
     position: fixed;        /* flotante */
@@ -74,11 +69,14 @@
 }
 /*FIN DEL NAVBAR*/
 .titulo-header{
-    font-family:'Rubik Bubbles',system-ui;
+    font-family:'Bebas Neue',sans-serif;
     font-size: 50px;
+    text-shadow: 5px 5px#ffffff;
+
     letter-spacing: 2px;
 
 }
+
 h1{
   font-family: 'Inter Tight',system-ui;
   font-weight: 900;
@@ -102,6 +100,7 @@ p{
   background-color: #5c4433;
   border-radius: 5px;
   padding: 5px;
+  width: auto;
 }
 .btn:hover{
     background-color: #35261a;
@@ -113,19 +112,6 @@ p{
   font-weight: 700;
   font-family: 'Delius',system-ui;
 
-}
-.btn-cafe {
-  width: 15%;
-  height: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-}
-.btn-hero{
-  width: 15%;
-  /* height: 5%; */
-  
 }
 
 /* Hero */
@@ -163,7 +149,7 @@ p{
 }
 .tarjeta {
   width: 300px;
-  height: 350px;
+  height: auto;
   background-color: rgba(24, 53, 11, 0.5);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(10, 80, 19, 0.4);
