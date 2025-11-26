@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="mediaEdades"></p>
+
+
+<script>
+    function Persona(nombre,apellido,edad,email){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.edad = edad
+        this.email = email
+
+    }
+    let error = () => { alert("Edad no numerica")}
+    function calcularMediaEdad(...edades){
+        let totalEdades = 0;
+        for ( let edad in edades){
+            if(isNaN(edad)){
+                return error();
+                break;
+            }
+            totalEdades+=edad;
+        }
+        return totalEdades/edades.length;
+    }
+    let persona1 = new Persona("Roberto","Martinez",22,"roberto.martinez@tuempresa.com")
+    let persona2 = new Persona("Antonio","Lopez",25,"antonio.lopez@tuempresa.com")
+    let persona3 = new Persona("Javier","Rodriguez",18,"javier.rodriguez@tuempresa.com")
+    let persona4 = new Persona("Eva","Teruel",33,"eva.teruel@tuempresa.com")
+    document.getElementById("mediaEdades").innerHTML = "La media (redondeada) de edades de 4 personas es de "+ Math.round(calcularMediaEdad(persona1.edad,persona2["edad"],persona3.edad,persona4.edad));
+
+
+</script>
+    
+</body>
+</html>

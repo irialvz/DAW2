@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulario" style="display: flex; flex-direction: column; border: 2px solid black;">
+        <label>Nombre: <input type="text" name="nombre" required></label>
+        <label>Apellido: <input type="text" name="apellido" required></label>
+        <label>Edad: <input type="number" name="edad" required></label>
+        <label>email: <input type="email" name="email" required></label>
+        <button type="submit">Agregar usuario</button>
+    </form>
+
+
+<script>
+    function Persona(nombre,apellido,edad,email){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.edad = edad
+        this.email = email
+
+    }
+    let error = () => { alert("Edad no numerica")}
+    function calcularMediaEdad(...edades){
+        let totalEdades = 0;
+        for ( let edad in edades){
+            if(isNaN(edad)){
+                return error();
+                break;
+            }
+            totalEdades+=edad;
+        }
+        return totalEdades/edades.length;
+    }
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let nombrePersona = document.getElementById("nombre");
+        let apellidoPersona = document.getElementById("apellido");
+        let edadPersona = parseInt(document.getElementById("edad"));
+        let emailPersona = document.getElementById("email");
+        let persona = new Persona(nombrePersona,apellidoPersona,edadPersona,emailPersona);
+        document.getElementById("mediaEdades").innerHTML = "La media (redondeada) de edades de 4 personas es de "+ Math.round(calcularMediaEdad(persona1.edad,persona2["edad"],persona3.edad,persona4.edad));
+
+    });
+
+
+</script>
+    
+</body>
+</html>
