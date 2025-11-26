@@ -130,11 +130,17 @@ p{
 
 /* Hero */
 .hero {
-    position: relative;
+    display: flex;
     overflow: hidden;
     height: 100vh;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     
+}
+.cantantes {
+  width: 50%;
 }
 .bg-video {
 
@@ -305,8 +311,15 @@ p{
 }
 .hr-marcas { border:5px solid rgb(0, 0, 0);margin: 0px;}
 .hr-tarjeta { border:3px solid rgb(0, 0, 0);margin-bottom: 5px;}
-/* Footer */
-.footer-box {
-  background-color: #bdbdbd;
-  height: 60px;
-}
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 3rem 0;
+  }
+
+  .social-icons a {
+    font-size: 1.25rem;
+  }
+  .map-container {
+            height: 100%;
+        }
