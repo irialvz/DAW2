@@ -10,6 +10,17 @@
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/composer" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/php/app/bd/vendor/symfony/polyfill-php80" />
+    </include_path>
+  </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
