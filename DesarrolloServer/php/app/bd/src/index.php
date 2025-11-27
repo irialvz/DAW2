@@ -11,8 +11,7 @@ $bd = BD::getInstance();
 $tablas = $bd->getAllTables();
 if (isset($_POST['submit'])){
     $tabla = $_POST['submit'];
-    $contenido = $bd->getTableContent($tabla);
-    var_dump($contenido);
+    $contenido = $bd->getTableContent($tabla)??null;
 }
 ?>
 <!doctype html>
@@ -36,6 +35,15 @@ if (isset($_POST['submit'])){
        ?>
    </form>
   </fieldset>
+    <?php 
+        if (!is_null($contenido){
+            echo "<table><tr>"
+              foreach($contenido as $cont){
+                     echo "<td>$cont</td>"        
+              }
+            echo "</tr></table>" 
+          }
+      ?>
 
  <script>
 
