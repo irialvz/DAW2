@@ -1,5 +1,17 @@
+:root{
+  --ca-height: 40px;
+  --ca-white: #ffffff;
+  --ca-accent: #fd105e;
+}
 .fondo-claro{
   background: #ece7e7;
+}
+body {
+  background-color: #1e1e1e;
+}
+.resaltar {
+  letter-spacing: 5px;
+  color: rgb(170, 6, 6);
 }
 /* NAVBAR FLOTANTE */
 .navbar {
@@ -62,39 +74,56 @@
     transition: 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.5);
 }
-
+.text-white{
+    color: white;
+}
+.bg-grey {
+    background-color: #474747;
+}
+.text-pink{
+    color: #fd105e;
+}
 .nav-btn:hover {
     background: rgba(255, 255, 255, 0.6);
     color: #000;
 }
 /*FIN DEL NAVBAR*/
 .titulo-header{
-    font-family:'Bebas Neue',sans-serif;
-    font-size: 50px;
-    text-shadow: 5px 5px#ffffff;
-
-    letter-spacing: 2px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size: clamp(20px, 4.5vw, 45px);
+  max-width: 100%;
+  width: 100%;
+  color: white;
+  margin: 0;
+  text-align: center;
+  text-shadow: 5px 5px #000000;
+  /* animation: slide; */
+  letter-spacing: 2px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 
 }
 
 h1{
   font-family: 'Inter Tight',system-ui;
   font-weight: 900;
-    font: 80px;
+  /* color: white; */
 }
 h2{
   font-family: 'Inter Tight',system-ui;
   font-weight:700;
+    color: white;
+
 }
 p{
   font-family: 'Inter Tight',system-ui;
   font-weight: 400;
+  color: white;
 
   font-size: 24px;
 }
-.subrayado {
-  margin-bottom: 2%;
-}
+
 
 .btn{
   background-color: #5c4433;
@@ -126,7 +155,14 @@ p{
     
 }
 .cantantes {
-  width: 50%;
+  width: 70%;
+  max-width: 1200px;
+  /* let the height be determined by the H1 content */
+  height: auto;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .bg-video {
 
@@ -141,6 +177,47 @@ p{
 
 }
 
+/* Controles de audio dentro del hero */
+.custom-audio{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-audio audio{
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* botón play / pause */
+.ca-play, .ca-mute{
+  height: var(--ca-height);
+  width: var(--ca-height);
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+  color: var(--ca-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* focus accesible */
+.ca-play:focus, .ca-mute:focus, .ca-progress:focus{
+  outline: 2px solid rgba(255,223,0,0.25);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
 .contenedor-tarjetas{
   display: flex;
   flex-direction: row;
@@ -150,9 +227,10 @@ p{
 .tarjeta {
   width: 300px;
   height: auto;
-  background-color: rgba(24, 53, 11, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(2px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(10, 80, 19, 0.4);
+  border: 1px solid #1e1e1e;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -167,6 +245,7 @@ p{
 
 .tarjeta:hover {
   transform: scale(1.03);
+  filter: blur(0px);
 }
 
 /* Imagen: ocupa el 60% del alto de la tarjeta */
