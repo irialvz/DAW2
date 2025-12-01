@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 40px;
+            font-family: Impact, sans-serif;
+
+        }
+        body{
+            background-color: antiquewhite;
+
+        }
+        button {
+            border-radius: 20px;
+            background-color: rgb(167, 126, 76);
+            padding: 10px;
+            font-weight: bold;
+        }
+        .seccion {
+            background-color: white;
+            border-radius: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="seccion">
+        <h1>ACTIVIDAD 04 01</h1>
+        <p>Preguntas:<br><strong>
+            a) ¿Qué es el DOM y cómo se diferencia del HTML?</strong><br>
+            El DOM es una representación en forma de árbol donde cada etiqueta, texto, atributo y nodo se convierte
+            en un objeto manipulable mediante JavaScript.
+            <br><strong>b) ¿Por qué no podemos manipular el DOM antes de cargarlo por completo?</strong><br>
+            Porque el navegador no ha construido el "esqueleto" o la estructura de elementos para poder interactuar con ellas
+            <br><strong>c) ¿Por qué necesitamos $(document).ready()?</strong><br>
+            Para garantizar que se ejecuta la interaccion cuando el documento esta completamente cargado
+        </p>
+        <h3>Elementos de jQuery: </h3>
+    <ul>
+        <li>$(document).ready()</li>
+        <li>$document.querySelector()</li>
+        <li>$(document).ready()</li>
+        <li>$document.querySelector().</li>
+        <li>$(document).ready()</li>
+    </ul>
+        <button>Mostrar info</button>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="javascript.js"></script>
+</body>
+</html>

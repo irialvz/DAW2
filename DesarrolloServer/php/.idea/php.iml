@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app/composer/class/controladores" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/composer/class/modelos" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/app/composer/class/vistas" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/app/enunciadosExamen/vendor/composer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
