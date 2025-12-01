@@ -18,6 +18,16 @@ class Bd
     function cerrarConexion(){
         mysqli_close($this->abrirConexion());
     }
+    function getColumns(string $table){
+        $sentencia = "SELECT COLUMN_NAME FROM information_schema.columns WHERE table_name = '$table' LIMIT 0, 25;";
+        $resultado = $this->conn->query($sentencia);
+        $fila = $resultado->fetch_row();
+        while($fila){
+            $nombres[] = $fila;
+            $fila = $resultado->fetch_row();
+        }
+        return $nombres;
+    }
     function getAllTables():array
     {
         $sentencia = "SHOW TABLES";
@@ -25,7 +35,7 @@ class Bd
         $fila = $resultado->fetch_array();
         $tablas = [];
         while($fila){
-            $tablas[] = $fila[0];
+            $tablas[] = $fila;
             $fila = $resultado->fetch_row();
         }
         return $tablas;
@@ -36,7 +46,7 @@ class Bd
         $resultado = $this->conn->query($sentencia);
         $fila = $resultado->fetch_row();
         while($fila){
-            $tablas[] = $fila[0];
+            $tablas[] = $fila;
             $fila = $resultado->fetch_row();
         }
         return $tablas;
