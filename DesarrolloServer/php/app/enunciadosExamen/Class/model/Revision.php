@@ -2,7 +2,6 @@
 
 namespace enunciadosExamen\Class\enunciado;
 
-use Cassandra\Date;
 
 class Revision
 {

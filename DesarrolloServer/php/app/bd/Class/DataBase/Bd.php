@@ -1,10 +1,13 @@
 <?php
 namespace Class\baseDatos;
 use mysqli;
+use mysqli_sql_exception;
+
 class Bd
 {
     private static ?Bd $instance=null;
     private mysqli $conn;
+
     private function __construct()
     {
         $this->conn = new mysqli($_ENV['HOST'],$_ENV['DB_USER'],$_ENV['DB_PASSWORD'],$_ENV['DATABASE']);
@@ -52,6 +55,33 @@ class Bd
         return $tablas;
     }
 
+    public function registrarse(string $username,string $password):bool{
+        $sentencia = "INSERT INTO usuarios (nombre, password) values ('$username','$password')";
+        try {
+            $resultado = $this->conn->query($sentencia);
+            if ($resultado) {
+                return true;
+            }
+            return false;
+        } catch (mysqli_sql_exception $e) {
+            return false;
+        }
+    }
+    public function logearse(string $username, string $password):bool{
+//        session_start();
+        $sentencia = "SELECT * FROM usuarios WHERE nombre = '$username' AND password = '$password'";
+        try {
+            //query de tipo select devuelve el resultado de la consulta
+            $resultado = $this->conn->query($sentencia);
+            if ($resultado->num_rows > 0) {
+//                $_SESSION['usuario'] = $username;
+                return true;
+            }
+            return false;
+        } catch (mysqli_sql_exception $e) {
+            return false;
+        }
+    }
 
 
 }

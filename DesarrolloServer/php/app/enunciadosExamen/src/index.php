@@ -28,7 +28,6 @@ if ($mascota??null){
 }
 $errorRevision = false;
 if (isset($_POST['submitRevision'])) {
-    //TODO
     $fecha = $_POST["fechaRevision"];
     $peso = $_POST["pesoMascota"];
     $diagnostico = $_POST["diagnosticoMascota"];
