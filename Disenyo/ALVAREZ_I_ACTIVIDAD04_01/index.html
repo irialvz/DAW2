@@ -37,7 +37,20 @@
             <br><strong>b) ¿Por qué no podemos manipular el DOM antes de cargarlo por completo?</strong><br>
             Porque el navegador no ha construido el "esqueleto" o la estructura de elementos para poder interactuar con ellas
             <br><strong>c) ¿Por qué necesitamos $(document).ready()?</strong><br>
-            Para garantizar que se ejecuta la interaccion cuando el documento esta completamente cargado
+            Para garantizar que se ejecuta la interaccion cuando el documento esta completamente cargado<br>
+        </p>
+        <p><strong>Pregunta 2):<br>
+        ¿Por qué each() recibe dos valores: índice y elemento?</strong><br>
+        para iterar sobre colecciones de elementos del DOM <br>
+        </p>        <p><strong>Pregunta 2):<br>
+        ¿Por qué each() recibe dos valores: índice y elemento?</strong><br>
+        para iterar sobre colecciones de elementos del DOM <br>
+        </p>
+        <p><strong>Pregunta 3):<br>
+        ¿Qué ocurre si intentas aplicar css() a un selector vacío?<br></strong>
+        Si intentas aplicar un método de jQuery css() a un selector vacío no pasa nada<br>
+       <strong> b) ¿Cómo detecta jQuery que la selección es nula?<br></strong>
+        comprobando la longitud de la colección de elementos
         </p>
         <h3>Elementos de jQuery: </h3>
     <ul>
@@ -47,7 +60,8 @@
         <li>$document.querySelector().</li>
         <li>$(document).ready()</li>
     </ul>
-        <button>Mostrar info</button>
+        <button id="info">Mostrar info</button>
+        <button id="elemento">Añadir elemento</button>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
