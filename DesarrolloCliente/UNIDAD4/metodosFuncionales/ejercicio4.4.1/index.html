@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function CuentaBancaria(titular, saldo, intereses) {
+        this.titular = titular;
+        this.saldo = saldo;
+        this.intereses = intereses;
+        this.calcularInteres = function () {
+            let interes = (this.saldo * this.intereses) / 10;
+            return "El interes que me acabo de inventar es de " + interes;
+        }
+        this.depositarDinero = function (cantidad) {
+            this.saldo = cantidad > 0 ? this.saldo + cantidad : this.saldo;
+            return "Cantidad " + cantidad + "€ depositada. Saldo actual: " + this.saldo;
+        }
+        this.retirarDinero = function (cantidad) {
+            cantidad > this.saldo ? this.saldo = 0 : this.saldo - cantidad;
+            return "Cantidad " + cantidad + "€ retirada. Saldo actual: " + this.saldo;
+        }
+        this.mostrarDetalles = function () {
+            return "Cuenta creada de " + this.titular + " con saldo de " + this.saldo + "€ y con un " + this.intereses + "% de intereses"
+        }
+    }
+    let cuenta1 = new CuentaBancaria("Iria", 100, 2);
+    console.log(cuenta1.mostrarDetalles())
+    let cuenta2 = new CuentaBancaria("Juan", 50, 2);
+    console.log(cuenta2.mostrarDetalles())
+    let cuenta3 = new CuentaBancaria("Xiomara", 200, 2);
+    console.log(cuenta3.mostrarDetalles())
+    let cuenta4 = new CuentaBancaria("Dan", 1, 2);
+    console.log(cuenta4.mostrarDetalles())
+    var cuentas = [cuenta1,cuenta2,cuenta3,cuenta4];
+    console.log("Todas las cuentas tienen un 2% de intereses? " + cuentas.every(cuenta => cuenta.intereses == 2))
+</script>
+
+</html>

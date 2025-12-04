@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let tareas = [];
+        let error = false;
+        while (!error && tareas.length != 3) {
+            let nombreTarea = prompt("nombre de la tarea?");
+            if (nombreTarea.trim().length == 0 || nombreTarea === null) {
+                error = true;
+                alert("el nombre no puede sestar vacio");
+            }
+            if (!error) {
+                const nuevaTarea = { nombre: nombreTarea, completada: false, fecha: new Date() };
+                tareas.push(nuevaTarea);
+                localStorage.setItem("lista", JSON.stringify(tareas))
+            }
+        }
+        tareas.forEach(tarea => {
+            console.log(tarea["nombre"], tarea["fecha"].toLocaleString());
+        });
+        // console.log(localStorage.getItem("lista"));
+
+    </script>
+</body>
+
+</html>

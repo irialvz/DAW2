@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenido" >
+        <p id="edadAlmacenada"></p>
+        <p id="fechaAlmacenada"></p>
+        <p id="edadAlmacenada"></p>
+    </div>
+    <script>
+        let error = false;
+        let edadUsuario = prompt("Que edad tienes?");
+        if (isNaN(edadUsuario) || edadUsuario === null || edadUsuario.trim() === ""){
+            error = true;
+            alert("La edad introducida no es valida");
+        }
+        if (!error){
+            if (edadUsuario<18){
+                document.getElementById("contenido").innerHTML = "";
+                alert("Debes ser mayor de edad!");
+            }else {
+                const usuario = {edad: edadUsuario,fechaAcceso: new Date()};
+                sessionStorage.setItem("usuario",JSON.stringify(usuario));
+                let opcion = prompt("Elige una opcion:\n 1)Ver edad almacenada\n 2) Ver fecha almacenada \n 3)Borrar sesion");
+                switch(opcion){
+                    case "1":
+                        edadAlmacenada();
+                        break;
+                    case  "2":
+                        fechaAcceso();
+                        break;
+                    case "3":
+                        borrarSesion();
+                        break;
+                    default:
+                        alert("Opcion no valida");
+                }
+            }
+        }
+        function edadAlmacenada(){
+            if(sessionStorage.getItem("usuario") === null){
+                alert("Error:La sesion esta vacia");
+                return;
+            }
+            let datos = sessionStorage.getItem("usuario");
+            let usuarioObj =JSON.parse(datos);
+            document.getElementById("edadAlmacenada").innerHTML = usuarioObj.edad;
+        }
+        function fechaAcceso(){
+            if(sessionStorage.getItem("usuario") === null){
+                alert("Error:La sesion esta vacia");
+                return;
+            }
+            let datos = sessionStorage.getItem("usuario");
+            let usuarioObj =JSON.parse(datos);
+            document.getElementbyId("fechaAlmacenada").innerHTML = usuarioObj.fechaAcceso;
+        }
+        let borrarSesion = () => sessionStorage.getItem("usuario") === null ? alert("Error: La sesion esta vacia") : sessionStorage.removeItem("usuario"); 
+    </script>
+</body>
+</html>
