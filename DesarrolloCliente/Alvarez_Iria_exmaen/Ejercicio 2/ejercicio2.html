@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Roberto Marín" />
+    <!-- EXAMEN DICIEMBRE 2025 DWEC CPIFP LOS ENLACES -->
+    <!-- NO MODIFIQUE ESTE ARCHIVO -->
+
+    <link href="css.css" rel="stylesheet" type="text/css" />
+    <!-- <script src="ejercicio2.js"></script> -->
+  </head>
+
+  <body>
+    <h1>Completar por el usuario</h1>
+
+    <form
+      name="fvalida"
+      onclick="validarDatos()"
+      method="get"
+      onsubmit="return valida(this)"
+    >
+      <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" />
+      </div>
+      <div>
+        <label for="apellidos">Apellidos</label>
+        <input type="text" name="apellidos" id="apellidos" />
+      </div>
+      <div>
+        <label for="correo">Email</label>
+        <input type="email" name="correo" id="correo" />
+      </div>
+      <div>
+        <label for="usuario">Usuario</label>
+        <input type="text" name="usuario" id="usuario" />
+      </div>
+      <div>
+        <label for="dni">Dni</label>
+        <input type="dni" name="dni" id="dni" />
+      </div>
+      <div>
+        <button id="boton1">Habilitar banco</button>
+      </div>
+
+      <div>
+        <label for="iban">IBAN:</label>
+        <input type="text" id="iban" />
+      </div>
+      <div>
+        <label for="ccc">CCC:</label>
+        <input type="text" id="ccc" />
+      </div>
+      <div>
+        <label for="pass">Contraseña:</label>
+        <input type="password" id="pass" />
+      </div>
+      <div>
+        <button
+          value="Enviar"
+          id="boton2"
+          type="submit"
+          disabled
+          onclick="datosBancarios()"
+        >
+          Enviar
+        </button>
+      </div>
+    </form>
+    <script>
+      function validarDatos(){
+        document.getElementById("fvalida");
+            let nombre = String(document.getElementsById("nombre"));
+            let apellido = String(document.getElementsById("apellido"));
+            let email = String(document.getElementsById("email"));
+            let usuario = String(document.getElementsById("usuario"));
+            let dni = String(document.getElementsById("dni"));
+            valida(nombre,apellido,email,dni);
+
+      }
+      function valida(...parametros){
+            //     document.getElementById("fvalida").addEventListener("submit",function (event){
+            // event.preventDefault();
+            let error = false;
+
+            function validarDni(NumeroDni,LetraDni){
+              if (NumeroDni.length != 8 || NumeroDni=="" || Number(NumeroDni) < 1e7 || Number(NumeroDni) > 1e8){
+                  return false;
+              }
+              if (LetraDni.length != 1 || LetraDni==""){
+                  return false;
+              }
+              return true;
+            };
+            let contadorNumericosNombre = 0;
+            for(let i=0;i<nombre.length;i++){
+              let caracter = nombre.charAt[i];
+              if(caracter >= '0' && caracter <= '9'){
+                contadorNumericosNombre++;
+              }
+            }
+            let contadorNumericosApellido = 0;
+            for(let i=0;i<apellido.length;i++){
+              let caracter = apellido.charAt[i];
+              if(caracter >= '0' && caracter <= '9' ){
+                contadorNumericosApellido++;
+              }
+            }
+            if (nombre.length - contadorNumericosNombre < 2 || apellido.length - contadorNumericoApellido < 2){
+              error = true;
+              alert("El apellido y el nombre deben tener al menos 2 caracteres NO numericos");
+            }
+            if (usuario.length < 5 || usuario.length > 8){
+              error = true;
+              alert("El usuario debe contener entre 5 y 8 caracteres");
+            }
+            if (!email.includes('@')){
+              error = true;
+              alert("El email debe contener una '@'");
+            }
+            if (!validarDni(dni.slice(0,7),dni.charAt(dni.length))){
+              error = true;
+              alert("El dni debe ser valido");
+            }
+
+            if (!error){
+              document.getElementById("boton1").disabled = false;
+              alert("todo ok")
+
+            }
+        };
+        
+      
+
+      function datosBancarios(){
+        let error = false;
+        let iban = document.getElementById("iban").value;
+        let ccc = document.getElementById("ccc").value;
+        let password = document.getElementById("pass").value;
+        if (typeof(iban) !== "string"){
+          error = true;
+          alert("iban debe ser tipo string");
+        }
+        if (typeof(ccc) !== "string"){
+          error = true;
+          alert("CCC debe ser de tipo string");
+        }
+        if (String(password).trim().length === 0){
+          error = true;
+          alert("La contraseña no puede estar vacio");
+        }
+        if(String(iban).substring(0,2) != "ES"){
+          error = true;
+          alert("El IBAN debe empezar por ES")
+        }else if (String(iban).substring(2).length > 2){
+          error = true;
+          alert("El IBAN debe contener dos numeros despues del ES")
+        }
+        if (String(ccc).length !== 20){
+          error = true;
+          alert("El ccc debe contener 20 numeros")
+        }
+        if (!error){
+          document.getElementById("boton2").disabled = false;
+        }
+
+      }
+    </script>
+  </body>
+</html>
