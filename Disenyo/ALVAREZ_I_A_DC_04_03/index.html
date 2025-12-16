@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actividad 04_03 - Multimedia</title>
+
+  <!-- CSS de Plyr -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- JS de Plyr -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+<h1>Actividad 04_03 - Reproductor Multimedia</h1>
+
+<label>
+  <input type="checkbox" id="permiso">
+  Acepto reproducir contenido multimedia
+</label>
+
+<br><br>
+
+<button id="toggle">Mostrar / Ocultar reproductor</button>
+
+<div id="reproductor" class="oculto">
+  <video id="video" controls>
+    <source src="https://cdn.plyr.io/static/blank.mp4" type="video/mp4">
+  </video>
+</div>
+
+<audio controls>
+  <source src="https://cdn.plyr.io/static/blank.mp3" type="audio/mp3">
+</audio>
+
+<div id="controles">
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+</div>
+
+<p id="info"></p>
+
+<ul id="listaVideos">
+  <li data-src="https://cdn.plyr.io/static/blank.mp4" class="activo">
+    <strong>Vídeo 1</strong><br>
+    Vídeo de ejemplo
+  </li>
+  <li data-src="https://cdn.plyr.io/static/blank.mp4">
+    <strong>Vídeo 2</strong><br>
+    Otro vídeo
+  </li>
+</ul>
+
+<noscript>
+  <p>
+    Esta web necesita JavaScript para gestionar permisos,
+    controles avanzados y el reproductor multimedia.
+  </p>
+</noscript>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.oculto {
+  display: none;
+}
+
+#reproductor {
+  max-width: 600px;
+  margin: 20px 0;
+  border: 3px solid #4CAF50;
+  padding: 10px;
+}
+
+#controles button {
+  margin-right: 10px;
+}
+
+#listaVideos li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#listaVideos .activo {
+  background-color: #d0ffd0;
+}
