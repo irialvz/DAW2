@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,5 @@ Route::fallback(function(){
     $nombre = request()->url();
    return "<h1>Error: $nombre Nanai del peluquin</h1>";
 });
+
+Route::get("alumnos/{id}/{nombre}",fn($codigo,$nombre)=>"estoy en alumno con id $codigo y me llamo $nombre");
